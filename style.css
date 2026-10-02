@@ -1,0 +1,71 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    background-color: #080f64;
+}
+
+.cabesalho {
+    display: flex; /*define qual modelo de organizar*/
+    gap: 30px;
+}
+
+.minhaImagem img {
+    width: 180px; /* Define a largura e altura da imagem */
+    height: 180px; /* Define a largura e altura da imagem */
+    border-radius: 50%; /* Define a borda arredondada da imagem */
+    object-fit: contain; /* Faz com que a imagem caber inteira ao espaço disponível */
+    border: 3px solid #06a381;
+}
+
+.minhasInformacoes p {
+    color: rgb(176, 182, 182); /* Define a cor do texto */
+    font-family: "Metal Mania", cursive; /* Define a fonte do texto */
+    font-size: 19px; /* Define o tamanho da fonte */
+}
+
+.minhasInformacoes h1 {
+    color: #18a8bb; /* Define a cor do texto */
+    font-family: "Metal Mania", cursive; /* Define a fonte do texto */
+    font-size: 24px; /* Define o tamanho da fonte */
+}
+
+.minhasInformacoes span {
+    color: #02b13c; /* Define a cor do texto */
+}
+
+.minhasInformacoes h2 {
+    color: rgb(165, 0, 0);
+    font-family: "Metal Mania", cursive;
+}
+
+.botoesContato img {
+    width: 25px; /* Define a largura e altura da imagem */
+    height: 25px; /* Define a largura e altura da imagem */
+}
+
+.botoesContato a {
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 8px;
+    border-radius: 8px;
+    background-color: rgb(46, 189, 17);
+}
+
+.sobreMin {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    font-family: "Metal Mania", cursive;
+}
+
+.sobreMin h2 {
+    color: #e5ece7;
+}
+
+.sobreMin p {
+    color: #558f68;
+}
