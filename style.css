@@ -4,12 +4,16 @@
 }
 
 body {
-    background-color: #080f64;
+    background-color: #0b1020;
 }
 
 .cabesalho {
     display: flex; /*define qual modelo de organizar*/
     gap: 30px;
+    border-radius: 8px;
+    border: 8px solid #294e5a;
+    background-color: #141e36;
+    margin: 20px;
 }
 
 .minhaImagem img {
@@ -17,27 +21,27 @@ body {
     height: 180px; /* Define a largura e altura da imagem */
     border-radius: 50%; /* Define a borda arredondada da imagem */
     object-fit: contain; /* Faz com que a imagem caber inteira ao espaço disponível */
-    border: 3px solid #06a381;
+    border: 3px solid #6ee7b7;
 }
 
 .minhasInformacoes p {
-    color: rgb(176, 182, 182); /* Define a cor do texto */
+    color: #bac6da; /* Define a cor do texto */
     font-family: "Metal Mania", cursive; /* Define a fonte do texto */
     font-size: 19px; /* Define o tamanho da fonte */
 }
 
 .minhasInformacoes h1 {
-    color: #18a8bb; /* Define a cor do texto */
+    color: #7dd3fc; /* Define a cor do texto */
     font-family: "Metal Mania", cursive; /* Define a fonte do texto */
     font-size: 24px; /* Define o tamanho da fonte */
 }
 
 .minhasInformacoes span {
-    color: #02b13c; /* Define a cor do texto */
+    color: #86efac; /* Define a cor do texto */
 }
 
 .minhasInformacoes h2 {
-    color: rgb(165, 0, 0);
+    color: #f28b82;
     font-family: "Metal Mania", cursive;
 }
 
@@ -52,7 +56,7 @@ body {
     align-items: center;
     padding: 8px 8px;
     border-radius: 8px;
-    background-color: rgb(46, 189, 17);
+    background-color: #86efac;
 }
 
 .sobreMin {
@@ -62,10 +66,27 @@ body {
     font-family: "Metal Mania", cursive;
 }
 
-.sobreMin h2 {
-    color: #e5ece7;
+.sobreMin > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #141e36;
+    border-radius: 8px;
+    border: 3px solid #294e5a;
 }
 
-.sobreMin p {
-    color: #558f68;
+.sobreMin h2 {
+    color: #edf2ff;
+    text-align: center;
+}
+
+.textoSobreMin  {
+    color: #c0cfda;
+    font-size: 25px;
+}
+
+.icone {
+    color: #86efac;
+    font-size: 20px;
 }
