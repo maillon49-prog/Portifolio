@@ -74,6 +74,7 @@ body {
     background-color: #141e36;
     border-radius: 8px;
     border: 3px solid #294e5a;
+    margin: 20px;
 }
 
 .sobreMin h2 {
@@ -89,4 +90,32 @@ body {
 .icone {
     color: #86efac;
     font-size: 20px;
+    list-style: none;
+}
+
+.icone li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icone img {
+    height: 35px;
+    width: 35px;
+    object-fit: contain;
+}
+
+
+
+
+
+
+
+
+footer {
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+    margin-top: 40px;
+    background-color: #294e5a;
 }
