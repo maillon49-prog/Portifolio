@@ -1,121 +1,211 @@
 * {
-    margin:0;
-    padding:0;
+    margin: 0; /* Remove a margem padrão de todos os elementos */
+    padding: 0; /* Remove o espaçamento interno padrão de todos os elementos */
+    box-sizing: border-box; /* Faz largura e altura incluírem padding e borda */
 }
 
 body {
-    background-color: #0b1020;
+    background-color: #0a0f1a; /* Define a cor de fundo geral da página */
 }
 
 .cabesalho {
-    display: flex; /*define qual modelo de organizar*/
-    gap: 30px;
-    border-radius: 8px;
-    border: 8px solid #294e5a;
-    background-color: #141e36;
-    margin: 20px;
+    display: flex; /* Organiza os elementos internos usando Flexbox */
+    gap: 30px; /* Define o espaço entre a imagem e as informações */
+    border-radius: 8px; /* Arredonda os cantos do cabeçalho */
+    border: 8px solid #263d52; /* Define a grossura, estilo e cor da borda */
+    background-color: #111827; /* Define a cor de fundo do cabeçalho */
+    margin: 20px; /* Cria espaço externo ao redor do cabeçalho */
 }
 
 .minhaImagem img {
-    width: 180px; /* Define a largura e altura da imagem */
-    height: 180px; /* Define a largura e altura da imagem */
-    border-radius: 50%; /* Define a borda arredondada da imagem */
-    object-fit: contain; /* Faz com que a imagem caber inteira ao espaço disponível */
-    border: 3px solid #6ee7b7;
+    width: 180px; /* Define a largura da imagem */
+    height: 180px; /* Define a altura da imagem */
+    border-radius: 50%; /* Deixa a imagem redonda */
+    object-fit: contain; /* Faz a imagem caber inteira dentro do espaço */
+    border: 3px solid #5eead4; /* Define a borda ao redor da imagem */
 }
 
 .minhasInformacoes p {
-    color: #bac6da; /* Define a cor do texto */
-    font-family: "Metal Mania", cursive; /* Define a fonte do texto */
-    font-size: 19px; /* Define o tamanho da fonte */
+    color: #b8c5d6; /* Define a cor dos textos em parágrafo */
+    font-family: "Metal Mania", cursive; /* Define a fonte dos parágrafos */
+    font-size: 19px; /* Define o tamanho da fonte dos parágrafos */
 }
 
 .minhasInformacoes h1 {
-    color: #7dd3fc; /* Define a cor do texto */
-    font-family: "Metal Mania", cursive; /* Define a fonte do texto */
-    font-size: 24px; /* Define o tamanho da fonte */
+    color: #60a5fa; /* Define a cor azul do seu nome */
+    font-family: "Metal Mania", cursive; /* Define a fonte do seu nome */
+    font-size: 24px; /* Define o tamanho da fonte do seu nome */
 }
 
 .minhasInformacoes span {
-    color: #86efac; /* Define a cor do texto */
+    color: #34d399; /* Define a cor verde da parte do nome dentro do span */
 }
 
 .minhasInformacoes h2 {
-    color: #f28b82;
-    font-family: "Metal Mania", cursive;
+    color: #f87171; /* Define a cor vermelha suave do subtítulo */
+    font-family: "Metal Mania", cursive; /* Define a fonte do subtítulo */
 }
 
 .botoesContato img {
-    width: 25px; /* Define a largura e altura da imagem */
-    height: 25px; /* Define a largura e altura da imagem */
+    width: 25px; /* Define a largura do ícone do botão de contato */
+    height: 25px; /* Define a altura do ícone do botão de contato */
 }
 
 .botoesContato a {
-    font-size: 16px;
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 8px;
-    border-radius: 8px;
-    background-color: #86efac;
+    font-size: 16px; /* Define o tamanho da fonte do botão */
+    display: inline-flex; /* Organiza ícone e texto do botão usando Flexbox */
+    align-items: center; /* Alinha verticalmente o ícone e o texto */
+    padding: 8px 8px; /* Cria espaço interno dentro do botão */
+    border-radius: 8px; /* Arredonda os cantos do botão */
+    background-color: #16a34a; /* Define a cor verde do botão */
+    text-decoration: none; /* Remove o sublinhado padrão do link */
+    color: #ffffff; /* Define a cor branca do texto do botão */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Define a fonte do botão */
+    transition: 0.3s; /* Faz as mudanças do hover acontecerem suavemente */
+}
+
+.botoesContato a:hover {
+    background-color: #15803d; /* Muda a cor do botão quando o mouse passa por cima */
+    color: #f8fafc; /* Muda a cor do texto durante o hover */
+    transform: scale(1.05); /* Aumenta levemente o botão durante o hover */
 }
 
 .sobreMin {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-    font-family: "Metal Mania", cursive;
+    display: flex; /* Organiza os cards lado a lado usando Flexbox */
+    gap: 30px; /* Define o espaço entre os cards */
+    align-items: flex-start; /* Alinha os cards pelo topo */
+    font-family: "Metal Mania", cursive; /* Define a fonte usada nessa seção */
 }
 
 .sobreMin > div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #141e36;
-    border-radius: 8px;
-    border: 3px solid #294e5a;
-    margin: 20px;
+    flex: 1; /* Faz os cards dividirem igualmente o espaço disponível */
+    display: flex; /* Organiza o conteúdo interno de cada card com Flexbox */
+    flex-direction: column; /* Coloca os elementos do card um embaixo do outro */
+    align-items: center; /* Centraliza os elementos horizontalmente no card */
+    background-color: #111827; /* Define a cor de fundo dos cards */
+    border-radius: 8px; /* Arredonda os cantos dos cards */
+    border: 3px solid #263d52; /* Define a borda dos cards */
+    margin: 20px; /* Cria espaço externo ao redor dos cards */
 }
 
 .sobreMin h2 {
-    color: #edf2ff;
-    text-align: center;
+    color: #e5edf7; /* Define a cor dos títulos dos cards */
+    text-align: center; /* Centraliza os títulos */
 }
 
-.textoSobreMin  {
-    color: #c0cfda;
-    font-size: 25px;
+.textoSobreMin {
+    color: #cbd5e1; /* Define a cor do texto da seção Sobre mim */
+    font-size: 25px; /* Define o tamanho da fonte do texto Sobre mim */
 }
 
 .icone {
-    color: #86efac;
-    font-size: 20px;
-    list-style: none;
+    color: #6ee7b7; /* Define a cor dos nomes das tecnologias */
+    font-size: 20px; /* Define o tamanho da fonte das tecnologias */
+    list-style: none; /* Remove as bolinhas padrão da lista */
 }
 
 .icone li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: flex; /* Organiza ícone e texto lado a lado */
+    align-items: center; /* Alinha verticalmente ícone e texto */
+    gap: 10px; /* Define o espaço entre o ícone e o nome da tecnologia */
+    margin-top: 12px; /* Cria espaço acima de cada item */
+    transition: 0.3s; /* Faz o efeito de hover acontecer suavemente */
+}
+
+.icone li:hover {
+    color: #34d399; /* Muda a cor do item quando o mouse passa por cima */
+    transform: scale(1.05); /* Aumenta levemente o item durante o hover */
 }
 
 .icone img {
-    height: 35px;
-    width: 35px;
-    object-fit: contain;
+    height: 35px; /* Define a altura dos ícones das tecnologias */
+    width: 35px; /* Define a largura dos ícones das tecnologias */
+    object-fit: contain; /* Faz o ícone caber inteiro dentro do tamanho definido */
 }
 
+.aprendendo {
+    color: #6ee7b7; /* Define a cor dos itens da lista Estou aprendendo */
+    font-size: 20px; /* Define o tamanho da fonte dessa lista */
+    list-style: none; /* Remove as bolinhas padrão da lista */
+}
 
+.aprendendo li {
+    display: flex; /* Organiza os itens usando Flexbox */
+    align-items: center; /* Alinha os itens verticalmente */
+    margin-top: 12px; /* Cria espaço acima de cada item */
+    transition: 0.3s; /* Faz o efeito de hover acontecer suavemente */
+}
 
+.aprendendo li:hover {
+    color: #34d399; /* Muda a cor do item quando o mouse passa por cima */
+    transform: scale(1.05); /* Aumenta levemente o item durante o hover */
+}
 
+.cursos {
+    color: #6ee7b7; /* Define a cor dos textos de formação e cursos */
+    font-size: 20px; /* Define o tamanho da fonte dessa seção */
+}
 
+.cursos h3 {
+    color: #60a5fa; /* Define a cor azul dos subtítulos Formação e Cursos */
+    margin: 10px; /* Cria espaço externo ao redor dos subtítulos */
+    text-align: center; /* Centraliza os subtítulos */
+}
 
+.cursos ul {
+    list-style: none; /* Remove as bolinhas padrão das listas */
+    text-align: center; /* Centraliza o texto das listas */
+}
 
+.cursos li {
+    margin-top: 10px; /* Cria espaço acima de cada item da lista */
+}
 
 footer {
-    text-align: center;
-    font-size: 14px;
-    color: gray;
-    margin-top: 40px;
-    background-color: #294e5a;
+    text-align: center; /* Centraliza o conteúdo do rodapé */
+    font-size: 14px; /* Define o tamanho da fonte do rodapé */
+    color: #94a3b8; /* Define a cor cinza suave do texto do rodapé */
+    margin-top: 40px; /* Cria espaço entre o conteúdo principal e o rodapé */
+    background-color: #172033; /* Define a cor de fundo do rodapé */
+}
+
+@media (max-width: 768px) { /* Aplica essas regras quando a tela tiver 768px ou menos */
+
+    .cabesalho {
+        flex-direction: column; /* Coloca imagem e informações uma embaixo da outra */
+        align-items: center; /* Centraliza os elementos do cabeçalho */
+        margin: 10px; /* Reduz a margem externa em telas menores */
+        padding: 15px; /* Cria espaço interno no cabeçalho */
+        gap: 15px; /* Reduz o espaço entre os elementos */
+        border-width: 3px; /* Deixa a borda mais fina no celular */
+    }
+
+    .minhaImagem img {
+        width: 140px; /* Reduz a largura da imagem no celular */
+        height: 140px; /* Reduz a altura da imagem no celular */
+    }
+
+    .minhasInformacoes {
+        text-align: center; /* Centraliza os textos das informações no celular */
+    }
+
+    .botoesContato {
+        display: flex; /* Usa Flexbox para organizar o botão */
+        justify-content: center; /* Centraliza o botão horizontalmente */
+    }
+
+    .sobreMin {
+        flex-direction: column; /* Coloca os cards um embaixo do outro */
+        gap: 15px; /* Define o espaço entre os cards no celular */
+    }
+
+    .sobreMin > div {
+        width: calc(100% - 20px); /* Usa toda a largura disponível menos 20px */
+        margin: 0 10px; /* Cria 10px de espaço nas laterais */
+        padding: 15px; /* Cria espaço interno dentro dos cards */
+    }
+
+    .textoSobreMin {
+        font-size: 18px; /* Reduz o tamanho do texto Sobre mim no celular */
+    }
 }
