@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap'); /* Importa as fontes Inter e Poppins */
+
 * {
     margin: 0; /* Remove a margem padrão de todos os elementos */
     padding: 0; /* Remove o espaçamento interno padrão de todos os elementos */
@@ -6,6 +8,7 @@
 
 body {
     background-color: #0a0f1a; /* Define a cor de fundo geral da página */
+    font-family: "Inter", sans-serif; /* Define Inter como fonte principal do site */
 }
 
 .cabesalho {
@@ -27,13 +30,13 @@ body {
 
 .minhasInformacoes p {
     color: #b8c5d6; /* Define a cor dos textos em parágrafo */
-    font-family: "Metal Mania", cursive; /* Define a fonte dos parágrafos */
+    font-family: "Inter", sans-serif; /* Define Inter como fonte dos parágrafos */
     font-size: 19px; /* Define o tamanho da fonte dos parágrafos */
 }
 
 .minhasInformacoes h1 {
     color: #60a5fa; /* Define a cor azul do seu nome */
-    font-family: "Metal Mania", cursive; /* Define a fonte do seu nome */
+    font-family: "Poppins", sans-serif; /* Define Poppins como fonte principal do seu nome */
     font-size: 24px; /* Define o tamanho da fonte do seu nome */
 }
 
@@ -43,7 +46,7 @@ body {
 
 .minhasInformacoes h2 {
     color: #f87171; /* Define a cor vermelha suave do subtítulo */
-    font-family: "Metal Mania", cursive; /* Define a fonte do subtítulo */
+    font-family: "Poppins", sans-serif; /* Define Poppins como fonte do subtítulo */
 }
 
 .botoesContato img {
@@ -60,7 +63,7 @@ body {
     background-color: #16a34a; /* Define a cor verde do botão */
     text-decoration: none; /* Remove o sublinhado padrão do link */
     color: #ffffff; /* Define a cor branca do texto do botão */
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Define a fonte do botão */
+    font-family: "Inter", sans-serif; /* Define Inter como fonte do botão */
     transition: 0.3s; /* Faz as mudanças do hover acontecerem suavemente */
 }
 
@@ -74,7 +77,9 @@ body {
     display: flex; /* Organiza os cards lado a lado usando Flexbox */
     gap: 30px; /* Define o espaço entre os cards */
     align-items: flex-start; /* Alinha os cards pelo topo */
-    font-family: "Metal Mania", cursive; /* Define a fonte usada nessa seção */
+    font-family: "Inter", sans-serif; /* Define Inter como fonte dos conteúdos dos cards */
+
+    flex-wrap: wrap; /* Permite que os blocos pulem para outra linha */
 }
 
 .sobreMin > div {
@@ -88,20 +93,60 @@ body {
     margin: 20px; /* Cria espaço externo ao redor dos cards */
 }
 
+.sobreMin > .aprendendo {
+    flex-basis: 100%; /* Faz esse bloco ocupar uma linha inteira */
+}
+
+.aprendendo > div {
+    display: flex; /* Organiza os cards lado a lado */
+    flex-wrap: wrap; /* Permite quebrar linha se não couber */
+    gap: 15px; /* Espaço entre cada card */
+    width: 100%;
+    min-width: 0;
+    justify-content: center;
+}
+
+.aprendendo > div  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex: 1 1 220px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    padding: 12px;
+    color: #b8c5d6;
+    background-color: #2a3170;
+    border-radius: 8px;
+    margin: 12px;
+}
+
+.aprendendo img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
 .sobreMin h2 {
     color: #e5edf7; /* Define a cor dos títulos dos cards */
     text-align: center; /* Centraliza os títulos */
+    font-family: "Poppins", sans-serif; /* Define Poppins como fonte dos títulos dos cards */
 }
+
+
 
 .textoSobreMin {
     color: #cbd5e1; /* Define a cor do texto da seção Sobre mim */
     font-size: 25px; /* Define o tamanho da fonte do texto Sobre mim */
+    font-family: "Inter", sans-serif; /* Define Inter como fonte do texto Sobre mim */
 }
 
 .icone {
     color: #6ee7b7; /* Define a cor dos nomes das tecnologias */
     font-size: 20px; /* Define o tamanho da fonte das tecnologias */
     list-style: none; /* Remove as bolinhas padrão da lista */
+    font-family: "Inter", sans-serif; /* Define Inter como fonte das tecnologias */
 }
 
 .icone li {
@@ -123,33 +168,17 @@ body {
     object-fit: contain; /* Faz o ícone caber inteiro dentro do tamanho definido */
 }
 
-.aprendendo {
-    color: #6ee7b7; /* Define a cor dos itens da lista Estou aprendendo */
-    font-size: 20px; /* Define o tamanho da fonte dessa lista */
-    list-style: none; /* Remove as bolinhas padrão da lista */
-}
-
-.aprendendo li {
-    display: flex; /* Organiza os itens usando Flexbox */
-    align-items: center; /* Alinha os itens verticalmente */
-    margin-top: 12px; /* Cria espaço acima de cada item */
-    transition: 0.3s; /* Faz o efeito de hover acontecer suavemente */
-}
-
-.aprendendo li:hover {
-    color: #34d399; /* Muda a cor do item quando o mouse passa por cima */
-    transform: scale(1.05); /* Aumenta levemente o item durante o hover */
-}
-
 .cursos {
     color: #6ee7b7; /* Define a cor dos textos de formação e cursos */
     font-size: 20px; /* Define o tamanho da fonte dessa seção */
+    font-family: "Inter", sans-serif; /* Define Inter como fonte da seção de cursos */
 }
 
 .cursos h3 {
     color: #60a5fa; /* Define a cor azul dos subtítulos Formação e Cursos */
     margin: 10px; /* Cria espaço externo ao redor dos subtítulos */
     text-align: center; /* Centraliza os subtítulos */
+    font-family: "Poppins", sans-serif; /* Define Poppins como fonte dos subtítulos */
 }
 
 .cursos ul {
@@ -167,6 +196,7 @@ footer {
     color: #94a3b8; /* Define a cor cinza suave do texto do rodapé */
     margin-top: 40px; /* Cria espaço entre o conteúdo principal e o rodapé */
     background-color: #172033; /* Define a cor de fundo do rodapé */
+    font-family: "Inter", sans-serif; /* Define Inter como fonte do rodapé */
 }
 
 @media (max-width: 768px) { /* Aplica essas regras quando a tela tiver 768px ou menos */
@@ -198,6 +228,10 @@ footer {
         flex-direction: column; /* Coloca os cards um embaixo do outro */
         gap: 15px; /* Define o espaço entre os cards no celular */
     }
+
+    .sobreMin > .aprendendo {
+        flex-basis: auto; /* Volta ao tamanho automático no celular */
+}
 
     .sobreMin > div {
         width: calc(100% - 20px); /* Usa toda a largura disponível menos 20px */
