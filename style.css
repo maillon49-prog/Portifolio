@@ -1,245 +1,620 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap'); /* Importa as fontes Inter e Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+/* Cores, medidas e movimentos compartilhados. */
+:root {
+    color-scheme: dark;
+    --fundo: #0c0e18;
+    --superficie: #141724;
+    --superficie-elevada: #1b1e30;
+    --borda: #2c3045;
+    --texto: #f2f3fa;
+    --texto-suave: #b2b8cc;
+    --destaque: #c4b5fd;
+    --azul: #96d9f5;
+    --raio: 24px;
+    --sombra: 0 16px 48px rgb(0 0 0 / 16%);
+    --transicao: 220ms ease;
+    --entrada: 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
 
 * {
-    margin: 0; /* Remove a margem padrão de todos os elementos */
-    padding: 0; /* Remove o espaçamento interno padrão de todos os elementos */
-    box-sizing: border-box; /* Faz largura e altura incluírem padding e borda */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #0a0f1a; /* Define a cor de fundo geral da página */
-    font-family: "Inter", sans-serif; /* Define Inter como fonte principal do site */
+    min-width: 280px;
+    background:
+        radial-gradient(ellipse at 12% 0%, rgb(134 105 228 / 12%), transparent 45%),
+        radial-gradient(ellipse at 100% 45%, rgb(66 136 176 / 7%), transparent 45%),
+        var(--fundo);
+    color: var(--texto);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
 
+::selection {
+    background: var(--destaque);
+    color: var(--fundo);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--azul);
+    outline-offset: 6px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+main {
+    display: grid;
+    gap: 24px;
+    width: min(1180px, calc(100% - 80px));
+    margin-inline: auto;
+    padding-block: 64px 32px;
+}
+
+main > section,
+.sobreMin > div,
+.minhasInformacoes {
+    min-width: 0;
+}
+
+.cabesalho,
+.sobreMin > div,
+.prjetos-basico {
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    background: var(--superficie);
+    box-shadow: var(--sombra);
+    animation: aparecer var(--entrada) both;
+}
+
+/* Apresentação. */
 .cabesalho {
-    display: flex; /* Organiza os elementos internos usando Flexbox */
-    gap: 30px; /* Define o espaço entre a imagem e as informações */
-    border-radius: 8px; /* Arredonda os cantos do cabeçalho */
-    border: 8px solid #263d52; /* Define a grossura, estilo e cor da borda */
-    background-color: #111827; /* Define a cor de fundo do cabeçalho */
-    margin: 20px; /* Cria espaço externo ao redor do cabeçalho */
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(32px, 5vw, 72px);
+    overflow: hidden;
+    padding: clamp(32px, 4.5vw, 64px);
+    background: linear-gradient(120deg, #1b1d31, #141724 65%);
+}
+
+.cabesalho::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: radial-gradient(circle at 85% 45%, rgb(160 134 255 / 14%), transparent 38%);
+    content: '';
+}
+
+.minhaImagem {
+    position: relative;
+    grid-column: 2;
+    grid-row: 1;
+    width: clamp(190px, 21vw, 260px);
+    aspect-ratio: 1;
+    padding: 9px;
+    border: 1px solid rgb(196 181 253 / 32%);
+    border-radius: 50%;
+    background: rgb(196 181 253 / 5%);
+    box-shadow: 0 0 64px rgb(160 134 255 / 12%);
+    animation: aparecer var(--entrada) 120ms both;
+}
+
+.minhaImagem::after {
+    position: absolute;
+    inset: -14px;
+    border: 1px dashed rgb(196 181 253 / 20%);
+    border-radius: 50%;
+    pointer-events: none;
+    content: '';
 }
 
 .minhaImagem img {
-    width: 180px; /* Define a largura da imagem */
-    height: 180px; /* Define a altura da imagem */
-    border-radius: 50%; /* Deixa a imagem redonda */
-    object-fit: contain; /* Faz a imagem caber inteira dentro do espaço */
-    border: 3px solid #5eead4; /* Define a borda ao redor da imagem */
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 400ms ease;
 }
 
-.minhasInformacoes p {
-    color: #b8c5d6; /* Define a cor dos textos em parágrafo */
-    font-family: "Inter", sans-serif; /* Define Inter como fonte dos parágrafos */
-    font-size: 19px; /* Define o tamanho da fonte dos parágrafos */
+.minhasInformacoes {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.minhasInformacoes > p:first-child {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    color: var(--destaque);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.minhasInformacoes > p:first-child::before {
+    width: 28px;
+    height: 2px;
+    background: currentColor;
+    content: '';
 }
 
 .minhasInformacoes h1 {
-    color: #60a5fa; /* Define a cor azul do seu nome */
-    font-family: "Poppins", sans-serif; /* Define Poppins como fonte principal do seu nome */
-    font-size: 24px; /* Define o tamanho da fonte do seu nome */
+    font-size: clamp(40px, 4.8vw, 64px);
+    font-weight: 700;
+    letter-spacing: -0.055em;
+    line-height: 1.15;
 }
 
-.minhasInformacoes span {
-    color: #34d399; /* Define a cor verde da parte do nome dentro do span */
+.minhasInformacoes h1 span {
+    display: block;
+    margin-top: 6px;
+    color: var(--destaque);
+    font-size: 0.7em;
+    letter-spacing: -0.04em;
 }
 
 .minhasInformacoes h2 {
-    color: #f87171; /* Define a cor vermelha suave do subtítulo */
-    font-family: "Poppins", sans-serif; /* Define Poppins como fonte do subtítulo */
+    margin-top: 22px;
+    color: var(--azul);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: clamp(15px, 1.6vw, 18px);
+    font-weight: 500;
+    line-height: 1.6;
 }
 
-.botoesContato img {
-    width: 25px; /* Define a largura do ícone do botão de contato */
-    height: 25px; /* Define a altura do ícone do botão de contato */
+.minhasInformacoes > p:last-of-type {
+    max-width: 49ch;
+    margin-top: 12px;
+    color: var(--texto-suave);
+    font-size: 15px;
+}
+
+.botoesContato {
+    margin-top: 28px;
 }
 
 .botoesContato a {
-    font-size: 16px; /* Define o tamanho da fonte do botão */
-    display: inline-flex; /* Organiza ícone e texto do botão usando Flexbox */
-    align-items: center; /* Alinha verticalmente o ícone e o texto */
-    padding: 8px 8px; /* Cria espaço interno dentro do botão */
-    border-radius: 8px; /* Arredonda os cantos do botão */
-    background-color: #16a34a; /* Define a cor verde do botão */
-    text-decoration: none; /* Remove o sublinhado padrão do link */
-    color: #ffffff; /* Define a cor branca do texto do botão */
-    font-family: "Inter", sans-serif; /* Define Inter como fonte do botão */
-    transition: 0.3s; /* Faz as mudanças do hover acontecerem suavemente */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 22px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    background: var(--destaque);
+    color: #181326;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgb(160 134 255 / 12%);
+    transition: background-color var(--transicao), box-shadow var(--transicao), transform var(--transicao);
 }
 
-.botoesContato a:hover {
-    background-color: #15803d; /* Muda a cor do botão quando o mouse passa por cima */
-    color: #f8fafc; /* Muda a cor do texto durante o hover */
-    transform: scale(1.05); /* Aumenta levemente o botão durante o hover */
+.botoesContato img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
 }
 
+/* Conteúdo e cartões. */
 .sobreMin {
-    display: flex; /* Organiza os cards lado a lado usando Flexbox */
-    gap: 30px; /* Define o espaço entre os cards */
-    align-items: flex-start; /* Alinha os cards pelo topo */
-    font-family: "Inter", sans-serif; /* Define Inter como fonte dos conteúdos dos cards */
-
-    flex-wrap: wrap; /* Permite que os blocos pulem para outra linha */
+    display: grid;
+    grid-template-columns: 0.95fr 1fr 1.2fr;
+    gap: 24px;
 }
 
 .sobreMin > div {
-    flex: 1; /* Faz os cards dividirem igualmente o espaço disponível */
-    display: flex; /* Organiza o conteúdo interno de cada card com Flexbox */
-    flex-direction: column; /* Coloca os elementos do card um embaixo do outro */
-    align-items: center; /* Centraliza os elementos horizontalmente no card */
-    background-color: #111827; /* Define a cor de fundo dos cards */
-    border-radius: 8px; /* Arredonda os cantos dos cards */
-    border: 3px solid #263d52; /* Define a borda dos cards */
-    margin: 20px; /* Cria espaço externo ao redor dos cards */
+    padding: 28px;
+    transition: border-color var(--transicao), box-shadow var(--transicao);
 }
 
-.sobreMin > .aprendendo {
-    flex-basis: 100%; /* Faz esse bloco ocupar uma linha inteira */
+.sobreMin > div:nth-child(1) { animation-delay: 100ms; }
+.sobreMin > div:nth-child(2) { animation-delay: 180ms; }
+.sobreMin > div:nth-child(3) { animation-delay: 260ms; }
+.sobreMin > div:nth-child(4) { animation-delay: 340ms; }
+
+.sobreMin h2,
+.aprendendo > h3,
+.prjetos-basico > h3 {
+    margin-bottom: 22px;
+    font-size: 19px;
+    letter-spacing: -0.035em;
 }
 
-.aprendendo > div {
-    display: flex; /* Organiza os cards lado a lado */
-    flex-wrap: wrap; /* Permite quebrar linha se não couber */
-    gap: 15px; /* Espaço entre cada card */
-    width: 100%;
-    min-width: 0;
-    justify-content: center;
+.sobreMin h2::before,
+.aprendendo > h3::before {
+    display: block;
+    width: 26px;
+    height: 3px;
+    margin-bottom: 16px;
+    border-radius: 3px;
+    background: var(--destaque);
+    content: '';
 }
-
-.aprendendo > div  p {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    flex: 1 1 220px;
-    min-width: 0;
-    overflow-wrap: anywhere;
-    padding: 12px;
-    color: #b8c5d6;
-    background-color: #2a3170;
-    border-radius: 8px;
-    margin: 12px;
-}
-
-.aprendendo img {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-.sobreMin h2 {
-    color: #e5edf7; /* Define a cor dos títulos dos cards */
-    text-align: center; /* Centraliza os títulos */
-    font-family: "Poppins", sans-serif; /* Define Poppins como fonte dos títulos dos cards */
-}
-
-
 
 .textoSobreMin {
-    color: #cbd5e1; /* Define a cor do texto da seção Sobre mim */
-    font-size: 25px; /* Define o tamanho da fonte do texto Sobre mim */
-    font-family: "Inter", sans-serif; /* Define Inter como fonte do texto Sobre mim */
+    color: var(--texto-suave);
+    font-size: 15px;
+    line-height: 1.9;
+    text-wrap: pretty;
 }
 
 .icone {
-    color: #6ee7b7; /* Define a cor dos nomes das tecnologias */
-    font-size: 20px; /* Define o tamanho da fonte das tecnologias */
-    list-style: none; /* Remove as bolinhas padrão da lista */
-    font-family: "Inter", sans-serif; /* Define Inter como fonte das tecnologias */
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    list-style: none;
 }
 
-.icone li {
-    display: flex; /* Organiza ícone e texto lado a lado */
-    align-items: center; /* Alinha verticalmente ícone e texto */
-    gap: 10px; /* Define o espaço entre o ícone e o nome da tecnologia */
-    margin-top: 12px; /* Cria espaço acima de cada item */
-    transition: 0.3s; /* Faz o efeito de hover acontecer suavemente */
+.icone li,
+.aprendendo > div p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    background: var(--superficie-elevada);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    transition: border-color var(--transicao), background-color var(--transicao), transform var(--transicao);
 }
 
-.icone li:hover {
-    color: #34d399; /* Muda a cor do item quando o mouse passa por cima */
-    transform: scale(1.05); /* Aumenta levemente o item durante o hover */
-}
-
-.icone img {
-    height: 35px; /* Define a altura dos ícones das tecnologias */
-    width: 35px; /* Define a largura dos ícones das tecnologias */
-    object-fit: contain; /* Faz o ícone caber inteiro dentro do tamanho definido */
-}
-
-.cursos {
-    color: #6ee7b7; /* Define a cor dos textos de formação e cursos */
-    font-size: 20px; /* Define o tamanho da fonte dessa seção */
-    font-family: "Inter", sans-serif; /* Define Inter como fonte da seção de cursos */
+.icone img,
+.aprendendo img {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
 }
 
 .cursos h3 {
-    color: #60a5fa; /* Define a cor azul dos subtítulos Formação e Cursos */
-    margin: 10px; /* Cria espaço externo ao redor dos subtítulos */
-    text-align: center; /* Centraliza os subtítulos */
-    font-family: "Poppins", sans-serif; /* Define Poppins como fonte dos subtítulos */
+    margin-bottom: 12px;
+    color: var(--azul);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
 }
 
 .cursos ul {
-    list-style: none; /* Remove as bolinhas padrão das listas */
-    text-align: center; /* Centraliza o texto das listas */
+    display: grid;
+    gap: 12px;
+    list-style: none;
 }
 
 .cursos li {
-    margin-top: 10px; /* Cria espaço acima de cada item da lista */
+    position: relative;
+    padding-left: 16px;
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.75;
+    text-wrap: pretty;
+}
+
+.cursos li::before {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--destaque);
+    content: '';
+}
+
+.cursos h3:not(:first-child) {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid var(--borda);
+}
+
+.sobreMin > .aprendendo {
+    grid-column: 1 / -1;
+}
+
+.aprendendo > div {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.aprendendo > div p {
+    min-height: 72px;
+    color: var(--texto-suave);
+}
+
+.aprendendo img[src$='icons8-database-50.png'] {
+    filter: invert(1);
+    opacity: 0.85;
+}
+
+/* Projetos e rodapé. */
+.prjetos-basico {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+    padding: 28px;
+    animation-delay: 420ms;
+}
+
+.prjetos-basico > h3:nth-of-type(1) { grid-area: 1 / 1; }
+.prjetos-basico > div:nth-of-type(1) { grid-area: 2 / 1; }
+.prjetos-basico > h3:nth-of-type(2) { grid-area: 1 / 2; }
+.prjetos-basico > div:nth-of-type(2) { grid-area: 2 / 2; }
+
+.prjetos-basico > div {
+    min-width: 0;
+}
+
+.prjetos-basico a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 76px;
+    padding: 20px;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    background: linear-gradient(110deg, #24223b, var(--superficie-elevada));
+    font-size: 15px;
+    font-weight: 500;
+    transition: border-color var(--transicao), box-shadow var(--transicao), transform var(--transicao);
+}
+
+.prjetos-basico a::after {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    margin-right: 4px;
+    border-top: 2px solid var(--destaque);
+    border-right: 2px solid var(--destaque);
+    transform: rotate(45deg);
+    content: '';
+}
+
+.prjetos-basico a:has(> p:empty) {
+    display: none;
 }
 
 footer {
-    text-align: center; /* Centraliza o conteúdo do rodapé */
-    font-size: 14px; /* Define o tamanho da fonte do rodapé */
-    color: #94a3b8; /* Define a cor cinza suave do texto do rodapé */
-    margin-top: 40px; /* Cria espaço entre o conteúdo principal e o rodapé */
-    background-color: #172033; /* Define a cor de fundo do rodapé */
-    font-family: "Inter", sans-serif; /* Define Inter como fonte do rodapé */
+    width: min(1180px, calc(100% - 80px));
+    margin-inline: auto;
+    padding-block: 24px 36px;
+    border-top: 1px solid var(--borda);
+    color: var(--texto-suave);
+    font-size: 12px;
+    text-align: center;
 }
 
-@media (max-width: 768px) { /* Aplica essas regras quando a tela tiver 768px ou menos */
+footer a {
+    border-radius: 3px;
+    color: var(--destaque);
+    text-decoration: underline;
+    text-decoration-color: rgb(196 181 253 / 35%);
+    text-underline-offset: 4px;
+    transition: color var(--transicao), text-decoration-color var(--transicao);
+}
 
-    .cabesalho {
-        flex-direction: column; /* Coloca imagem e informações uma embaixo da outra */
-        align-items: center; /* Centraliza os elementos do cabeçalho */
-        margin: 10px; /* Reduz a margem externa em telas menores */
-        padding: 15px; /* Cria espaço interno no cabeçalho */
-        gap: 15px; /* Reduz o espaço entre os elementos */
-        border-width: 3px; /* Deixa a borda mais fina no celular */
+/* Efeitos restritos a dispositivos com mouse. */
+@media (hover: hover) and (pointer: fine) {
+    .minhaImagem:hover img {
+        transform: scale(1.035);
     }
 
-    .minhaImagem img {
-        width: 140px; /* Reduz a largura da imagem no celular */
-        height: 140px; /* Reduz a altura da imagem no celular */
+    .botoesContato a:hover {
+        transform: translateY(-3px);
+        background: #d7ccff;
+        box-shadow: 0 8px 28px rgb(160 134 255 / 24%);
     }
 
-    .minhasInformacoes {
-        text-align: center; /* Centraliza os textos das informações no celular */
+    .sobreMin > div:hover {
+        border-color: #48405f;
+        box-shadow: 0 20px 48px rgb(0 0 0 / 22%);
     }
 
-    .botoesContato {
-        display: flex; /* Usa Flexbox para organizar o botão */
-        justify-content: center; /* Centraliza o botão horizontalmente */
+    .icone li:hover,
+    .aprendendo > div p:hover {
+        transform: translateY(-3px);
+        border-color: #655887;
+        background: #24243b;
+    }
+
+    .prjetos-basico a:hover {
+        transform: translateY(-3px);
+        border-color: #8573ac;
+        box-shadow: 0 8px 24px rgb(0 0 0 / 20%);
+    }
+
+    footer a:hover {
+        color: var(--texto);
+        text-decoration-color: currentColor;
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablets e celulares. */
+@media (max-width: 1050px) {
+    main,
+    footer {
+        width: calc(100% - 48px);
     }
 
     .sobreMin {
-        flex-direction: column; /* Coloca os cards um embaixo do outro */
-        gap: 15px; /* Define o espaço entre os cards no celular */
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .sobreMin > .aprendendo {
-        flex-basis: auto; /* Volta ao tamanho automático no celular */
+    .sobreMin > div:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+
+    .cursos {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 28px;
+        align-content: start;
+    }
+
+    .cursos h3:nth-of-type(1) { grid-area: 1 / 1; }
+    .cursos ul:nth-of-type(1) { grid-area: 2 / 1; }
+    .cursos h3:nth-of-type(2) { grid-area: 1 / 2; }
+    .cursos ul:nth-of-type(2) { grid-area: 2 / 2; }
+
+    .cursos h3:not(:first-child) {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+    }
+
+    .aprendendo > div {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
-    .sobreMin > div {
-        width: calc(100% - 20px); /* Usa toda a largura disponível menos 20px */
-        margin: 0 10px; /* Cria 10px de espaço nas laterais */
-        padding: 15px; /* Cria espaço interno dentro dos cards */
+@media (max-width: 700px) {
+    main {
+        gap: 18px;
+        width: calc(100% - 32px);
+        padding-block: 24px;
     }
 
-    .textoSobreMin {
-        font-size: 18px; /* Reduz o tamanho do texto Sobre mim no celular */
+    .cabesalho {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+        padding: 32px 24px;
+        text-align: center;
+    }
+
+    .minhaImagem {
+        grid-area: 1 / 1;
+        width: 168px;
+        margin-inline: auto;
+    }
+
+    .minhasInformacoes {
+        grid-area: 2 / 1;
+    }
+
+    .minhasInformacoes > p:first-child {
+        justify-content: center;
+        font-size: 11px;
+    }
+
+    .minhasInformacoes h1 {
+        font-size: clamp(36px, 9vw, 52px);
+    }
+
+    .minhasInformacoes > p:last-of-type {
+        margin-inline: auto;
+    }
+
+    .sobreMin {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .sobreMin > div,
+    .prjetos-basico {
+        padding: 24px;
+    }
+
+    .cursos,
+    .prjetos-basico {
+        display: block;
+    }
+
+    .cursos h3:not(:first-child) {
+        margin-top: 22px;
+        padding-top: 20px;
+        border-top: 1px solid var(--borda);
+    }
+
+    .aprendendo > div {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .prjetos-basico > h3:not(:first-child) {
+        margin-top: 28px;
+        margin-bottom: 0;
+        padding-top: 24px;
+        border-top: 1px solid var(--borda);
+    }
+
+    footer {
+        width: calc(100% - 32px);
+        padding-block: 20px 28px;
+    }
+}
+
+@media (max-width: 380px) {
+    .icone,
+    .aprendendo > div {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .aprendendo > div p {
+        min-height: 56px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
     }
 }
