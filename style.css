@@ -3,16 +3,16 @@
 /* Cores, medidas e movimentos compartilhados. */
 :root {
     color-scheme: dark;
-    --fundo: #090e19;
-    --superficie: #121a2a;
-    --superficie-elevada: #192338;
-    --borda: #2b3650;
-    --texto: #f5f6fc;
-    --texto-suave: #b5bfd3;
-    --destaque: #c2adff;
+    --fundo: #050c09;
+    --superficie: #0d1b16;
+    --superficie-elevada: #142a23;
+    --borda: #2b463b;
+    --texto: #effbf4;
+    --texto-suave: #b7cbbf;
+    --destaque: #91efb6;
     --azul: #8bdfeb;
     --raio: 22px;
-    --sombra: 0 18px 48px rgb(0 0 0 / 20%);
+    --sombra: 0 18px 48px rgb(0 0 0 / 35%), inset 0 1px 0 rgb(196 255 220 / 4%);
     --transicao: 220ms ease;
     --entrada: 700ms cubic-bezier(0.22, 1, 0.36, 1);
     --offset-nav: 114px;
@@ -35,16 +35,32 @@ html {
 }
 
 body {
+    position: relative;
+    isolation: isolate;
     min-width: 280px;
-    background:
-        radial-gradient(ellipse at 10% 0%, rgb(139 105 235 / 15%), transparent 42%),
-        radial-gradient(ellipse at 95% 55%, rgb(53 158 177 / 9%), transparent 42%),
-        var(--fundo);
+    min-height: 100vh;
+    min-height: 100svh;
+    background: var(--fundo);
     color: var(--texto);
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 16px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+}
+
+/* O GIF fica atrás de toda a página, sem interferir nos cliques. */
+body::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-image:
+        linear-gradient(180deg, rgb(5 12 9 / 48%), rgb(5 12 9 / 68%)),
+        url('img/fundo codigo.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    pointer-events: none;
+    content: '';
 }
 
 ::selection {
@@ -90,13 +106,13 @@ h3 {
     padding: 12px 20px;
     border: 1px solid var(--borda);
     border-radius: 16px;
-    background: rgb(18 26 42 / 95%);
-    box-shadow: 0 8px 32px rgb(0 0 0 / 20%);
+    background: rgb(13 27 22 / 96%);
+    box-shadow: 0 8px 32px rgb(0 0 0 / 32%), inset 0 1px 0 rgb(196 255 220 / 4%);
 }
 
 @supports (backdrop-filter: blur(16px)) {
     .nav {
-        background: rgb(18 26 42 / 85%);
+        background: rgb(13 27 22 / 88%);
         backdrop-filter: blur(16px);
     }
 }
@@ -116,10 +132,10 @@ h3 {
     flex-shrink: 0;
     width: 14px;
     height: 14px;
-    border: 1px solid rgb(213 195 255 / 35%);
+    border: 1px solid rgb(196 255 220 / 35%);
     border-radius: 5px;
     background: linear-gradient(135deg, var(--destaque), var(--azul));
-    box-shadow: 0 0 18px rgb(194 173 255 / 20%);
+    box-shadow: 0 0 18px rgb(145 239 182 / 25%);
     content: '';
 }
 
@@ -156,8 +172,8 @@ body:has(#inicio:target) .nav a[href='#inicio'],
 body:has(#sobreMin:target) .nav a[href='#sobreMin'],
 body:has(#aprendendo:target) .nav a[href='#aprendendo'],
 body:has(#projetos:target) .nav a[href='#projetos'] {
-    border-color: rgb(194 173 255 / 24%);
-    background: rgb(194 173 255 / 10%);
+    border-color: rgb(145 239 182 / 30%);
+    background: rgb(145 239 182 / 10%);
     color: var(--destaque);
 }
 
@@ -180,7 +196,7 @@ main > section,
 .prjetos-basico {
     border: 1px solid var(--borda);
     border-radius: var(--raio);
-    background: linear-gradient(155deg, #172035, var(--superficie) 70%);
+    background: linear-gradient(155deg, rgb(20 42 33 / 97%), rgb(13 27 22 / 97%) 70%);
     box-shadow: var(--sombra);
     animation: aparecer var(--entrada) backwards;
 }
@@ -195,8 +211,8 @@ main > section,
     gap: clamp(32px, 5vw, 76px);
     overflow: hidden;
     padding: clamp(32px, 4.5vw, 64px);
-    border-color: #423b62;
-    background: linear-gradient(120deg, #21213a, #131c2e 65%);
+    border-color: #3a6350;
+    background: linear-gradient(120deg, rgb(25 49 36 / 97%), rgb(12 26 22 / 97%) 65%);
 }
 
 .cabesalho::before {
@@ -204,9 +220,10 @@ main > section,
     z-index: -1;
     inset: 0;
     background:
-        radial-gradient(ellipse at 85% 25%, rgb(134 195 255 / 12%), transparent 45%),
-        repeating-linear-gradient(0deg, transparent 0 39px, rgb(180 187 227 / 3%) 39px 40px),
-        repeating-linear-gradient(90deg, transparent 0 39px, rgb(180 187 227 / 3%) 39px 40px);
+        radial-gradient(ellipse at 85% 25%, rgb(139 223 235 / 10%), transparent 45%),
+        repeating-linear-gradient(0deg, transparent 0 39px, rgb(183 239 206 / 3%) 39px 40px),
+        repeating-linear-gradient(90deg, transparent 0 39px, rgb(183 239 206 / 3%) 39px 40px);
+    pointer-events: none;
     content: '';
 }
 
@@ -227,10 +244,10 @@ main > section,
     width: clamp(190px, 22vw, 272px);
     aspect-ratio: 0.88;
     padding: 8px;
-    border: 1px solid rgb(194 173 255 / 45%);
+    border: 1px solid rgb(145 239 182 / 45%);
     border-radius: 28px;
-    background: linear-gradient(150deg, rgb(194 173 255 / 18%), rgb(139 223 235 / 5%));
-    box-shadow: 0 24px 60px rgb(0 0 0 / 28%), 0 0 60px rgb(142 131 231 / 10%);
+    background: linear-gradient(150deg, rgb(145 239 182 / 18%), rgb(139 223 235 / 5%));
+    box-shadow: 0 24px 60px rgb(0 0 0 / 28%), 0 0 60px rgb(145 239 182 / 10%);
     animation: aparecer var(--entrada) 120ms backwards;
 }
 
@@ -294,7 +311,7 @@ main > section,
 
 @supports (background-clip: text) {
     .minhasInformacoes h1 span {
-        background: linear-gradient(100deg, #d5c3ff, var(--destaque) 45%, var(--azul));
+        background: linear-gradient(100deg, #dbffe7, var(--destaque) 45%, var(--azul));
         background-clip: text;
         color: transparent;
     }
@@ -325,27 +342,46 @@ main > section,
 }
 
 .botoesContato a {
+    --botao-fundo: linear-gradient(115deg, #b3f7c8, #73dda3);
+    --botao-borda: #a2efbc;
+    --botao-texto: #092719;
+    --botao-brilho: rgb(115 221 163 / 20%);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    min-width: 136px;
     min-height: 48px;
-    padding: 13px 24px;
-    border: 1px solid rgb(232 222 255 / 30%);
+    padding: 13px 20px;
+    border: 1px solid var(--botao-borda);
     border-radius: 12px;
-    background: linear-gradient(115deg, #d5c3ff, var(--destaque));
-    color: #181326;
+    background: var(--botao-fundo);
+    color: var(--botao-texto);
     font-size: 14px;
     font-weight: 700;
-    box-shadow: 0 6px 24px rgb(151 121 230 / 20%), inset 0 1px 0 rgb(255 255 255 / 20%);
-    transition: filter var(--transicao), box-shadow var(--transicao), transform var(--transicao);
+    line-height: 1.4;
+    white-space: nowrap;
+    box-shadow: 0 6px 24px var(--botao-brilho), inset 0 1px 0 rgb(255 255 255 / 10%);
+    transition: filter var(--transicao), border-color var(--transicao), box-shadow var(--transicao), transform var(--transicao);
 }
 
 .botoesContato a[href^='https://github.com/'] {
-    border-color: #515d7b;
-    background: rgb(18 26 42 / 70%);
-    color: var(--texto);
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 4%);
+    --botao-fundo: linear-gradient(115deg, #28332e, #19251f);
+    --botao-borda: #647b6b;
+    --botao-texto: var(--texto);
+    --botao-brilho: rgb(0 0 0 / 20%);
+}
+
+.botoesContato a[href^='https://www.linkedin.com/'] {
+    --botao-fundo: linear-gradient(115deg, #153e57, #102c40);
+    --botao-borda: #477d9c;
+    --botao-texto: #d8f2ff;
+    --botao-brilho: rgb(76 167 216 / 15%);
+}
+
+.botoesContato a:focus-visible {
+    outline-color: var(--botao-borda);
+    box-shadow: 0 0 0 4px var(--botao-brilho);
 }
 
 .botoesContato a::after {
@@ -359,9 +395,14 @@ main > section,
 }
 
 .botoesContato img {
+    flex-shrink: 0;
     width: 22px;
     height: 22px;
     object-fit: contain;
+}
+
+.botoesContato img[src$='icons8-github-logo-94.png'] {
+    filter: invert(1);
 }
 
 /* Conteúdo e cartões. */
@@ -378,8 +419,8 @@ main > section,
 
 .sobreMin > div:first-child {
     background:
-        radial-gradient(ellipse at 0% 0%, rgb(102 198 211 / 8%), transparent 65%),
-        var(--superficie);
+        radial-gradient(ellipse at 0% 0%, rgb(145 239 182 / 8%), transparent 65%),
+        rgb(13 27 22 / 97%);
 }
 
 .sobreMin > div:nth-child(1) { animation-delay: 100ms; }
@@ -458,7 +499,7 @@ main > section,
     display: grid;
     gap: 14px;
     padding-left: 18px;
-    border-left: 1px solid #35425d;
+    border-left: 1px solid #3a5848;
     list-style: none;
 }
 
@@ -507,7 +548,7 @@ main > section,
     color: var(--texto-suave);
     font-size: 13px;
     line-height: 1.6;
-    background: linear-gradient(135deg, #1b2740, #182135);
+    background: linear-gradient(135deg, #183328, #142720);
 }
 
 .aprendendo img {
@@ -533,6 +574,7 @@ main > section,
 }
 
 .prjetos-basico a {
+    --projeto-cor: var(--destaque);
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto 10px;
     align-items: center;
@@ -540,12 +582,24 @@ main > section,
     min-height: 96px;
     padding: 24px;
     border: 1px solid var(--borda);
-    border-left: 3px solid var(--destaque);
+    border-left: 3px solid var(--projeto-cor);
     border-radius: 14px;
-    background: linear-gradient(110deg, #272440, var(--superficie-elevada));
+    background: linear-gradient(110deg, #1c3429, #11251f);
     font-size: 17px;
     font-weight: 500;
     transition: border-color var(--transicao), box-shadow var(--transicao), transform var(--transicao);
+}
+
+.prjetos-basico > div:first-of-type a:nth-child(2) {
+    --projeto-cor: var(--azul);
+}
+
+.prjetos-basico > div:not(:first-of-type) a {
+    --projeto-cor: #f6ca7d;
+}
+
+.prjetos-basico a:focus-visible {
+    outline-color: var(--projeto-cor);
 }
 
 .prjetos-basico a > p {
@@ -593,8 +647,8 @@ main > section,
     width: 10px;
     height: 10px;
     margin-right: 4px;
-    border-top: 2px solid var(--destaque);
-    border-right: 2px solid var(--destaque);
+    border-top: 2px solid var(--projeto-cor);
+    border-right: 2px solid var(--projeto-cor);
     transform: rotate(45deg);
     content: '';
 }
@@ -625,7 +679,7 @@ footer a {
     border-radius: 3px;
     color: var(--destaque);
     text-decoration: underline;
-    text-decoration-color: rgb(196 181 253 / 35%);
+    text-decoration-color: rgb(145 239 182 / 35%);
     text-underline-offset: 4px;
     transition: color var(--transicao), text-decoration-color var(--transicao);
 }
@@ -633,7 +687,7 @@ footer a {
 /* Efeitos restritos a dispositivos com mouse. */
 @media (hover: hover) and (pointer: fine) {
     .nav nav a:hover {
-        border-color: #4c5272;
+        border-color: #577a65;
         background-color: var(--superficie-elevada);
         color: var(--texto);
     }
@@ -645,31 +699,26 @@ footer a {
     .botoesContato a:hover {
         transform: translateY(-3px);
         filter: brightness(1.08);
-        box-shadow: 0 8px 28px rgb(160 134 255 / 24%);
-    }
-
-    .botoesContato a[href^='https://github.com/']:hover {
-        border-color: var(--destaque);
-        background: var(--superficie-elevada);
-        box-shadow: 0 8px 24px rgb(0 0 0 / 20%);
+        border-color: var(--botao-texto);
+        box-shadow: 0 10px 28px var(--botao-brilho), inset 0 1px 0 rgb(255 255 255 / 14%);
     }
 
     .sobreMin > div:hover {
         transform: translateY(-4px);
-        border-color: #55557e;
+        border-color: #577a65;
         box-shadow: 0 20px 48px rgb(0 0 0 / 22%);
     }
 
     .icone li:hover,
     .aprendendo > div p:hover {
         transform: translateY(-3px);
-        border-color: #7083b0;
-        background-color: #222f48;
+        border-color: #67977c;
+        background-color: #1d3b2e;
     }
 
     .prjetos-basico a:hover {
         transform: translateY(-3px);
-        border-color: #a18bcc;
+        border-color: var(--projeto-cor);
         box-shadow: 0 8px 24px rgb(0 0 0 / 20%);
     }
 
@@ -679,6 +728,7 @@ footer a {
     }
 }
 
+.nav nav a:active,
 .botoesContato a:active,
 .prjetos-basico a:active {
     transform: translateY(1px);
@@ -802,6 +852,7 @@ footer a {
     }
 
     .botoesContato a {
+        flex: 1 1 136px;
         gap: 8px;
         padding: 12px 16px;
     }
@@ -885,6 +936,10 @@ footer a {
         margin-inline: auto;
     }
 
+    .botoesContato a {
+        flex: 0 1 auto;
+    }
+
     .icone,
     .aprendendo > div {
         grid-template-columns: minmax(0, 1fr);
@@ -911,6 +966,12 @@ footer a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    body::before {
+        background-image:
+            radial-gradient(ellipse at 10% 0%, rgb(145 239 182 / 14%), transparent 55%),
+            linear-gradient(180deg, #0b1b13, var(--fundo));
+    }
+
     html {
         scroll-behavior: auto;
     }
@@ -922,6 +983,7 @@ footer a {
         transition: none !important;
     }
 
+    .nav nav a:active,
     .minhaImagem:hover img,
     .sobreMin > div:hover,
     .icone li:hover,
