@@ -452,6 +452,28 @@ main > section, .sobreMin > div, .minhasInformacoes { min-width: 0; }
 .prjetos-basico > div:not(:first-of-type) a span { border-color: rgba(255,202,138,.25); background: rgba(255,202,138,.07); color: var(--gold); }
 .prjetos-basico a:hover { transform: translateY(-4px); border-color: rgba(128,243,187,.45); box-shadow: 0 20px 35px rgba(0,0,0,.20); }
 
+/* Detalhes exclusivos do cartão JoKenPo. */
+.prjetos-basico a .projeto-descricao,
+.prjetos-basico a .projeto-atualizacoes {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.prjetos-basico a .projeto-descricao { grid-row: 3; }
+.prjetos-basico a .projeto-atualizacoes {
+  grid-row: 4;
+  margin-top: -5px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.prjetos-basico a .projeto-atualizacoes strong {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
 /* FOOTER ---------------------------------------------------------- */
 footer { width: min(var(--container),calc(100% - 64px)); margin: 0 auto; padding: 19px 0 34px; border-top: 1px solid var(--line); color: var(--subtle); text-align: center; font-size: 12px; }
 footer a { color: var(--mint); text-underline-offset: 4px; text-decoration: underline; text-decoration-color: rgba(128,243,187,.37); }
