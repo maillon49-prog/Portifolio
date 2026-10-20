@@ -260,12 +260,13 @@ button,input,textarea{font:inherit}
   .hero-actions .btn-primary{flex-basis:100%}
   .hero-highlights{gap:13px;margin-top:26px}
   .hero-highlights span{font-size:10px}
-  .hero-visual{min-height:375px}
-  .visual-orbit-one{width:290px;height:290px}
-  .visual-orbit-two{width:360px;height:360px}
-  .portrait-wrap{width:220px;height:256px}
+  /* No celular, a foto e o código ficam um abaixo do outro, sem sobreposição. */
+  .hero-visual{min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:20px}
+  .visual-orbit-one,.visual-orbit-two{display:none}
+  .portrait-wrap{width:min(220px,75%);height:auto;aspect-ratio:220/256;transform:none;flex-shrink:0}
+  .portrait-wrap:hover{transform:none}
   .portrait-label{right:-12px;top:15px;font-size:8px}
-  .code-window{bottom:0;left:50%;transform:translateX(-50%);width:min(100%,440px)}
+  .code-window{position:relative;bottom:auto;left:auto;transform:none;width:100%;max-width:440px;margin:0;flex-shrink:0}
   .code-content{font-size:10px;gap:8px}
   .code-content code{font-size:10px}
   .panel,.projects,.future,.contact{border-radius:16px}
@@ -292,7 +293,7 @@ button,input,textarea{font:inherit}
   .tech-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hero h1{font-size:39px}
   .hero-highlights{display:grid;gap:9px}
-  .code-window{width:calc(100% + 10px)}
+  .code-window{width:100%}
   .future-icon{width:52px;height:52px}
 }
 @media (prefers-reduced-motion:reduce){
