@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="340" viewBox="0 0 1280 340" role="img" aria-label="Portfólio Maillon Andrade - desenvolvimento web">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a1720"/><stop offset="1" stop-color="#061117"/></linearGradient>
+<radialGradient id="g" cx="28%" cy="50%" r="72%"><stop stop-color="#68eab4" stop-opacity=".18"/><stop offset="1" stop-color="#68eab4" stop-opacity="0"/></radialGradient></defs>
+<rect width="1280" height="340" rx="20" fill="url(#bg)"/><rect width="1280" height="340" rx="20" fill="url(#g)"/>
+<path d="M0 282 1280 110M0 320 1280 148M0 245 1280 73" stroke="#8bf2c0" stroke-opacity=".055"/>
+<rect x="56" y="48" width="188" height="35" rx="17" fill="#65e6aa" fill-opacity=".13" stroke="#80f3bb" stroke-opacity=".5"/>
+<text x="78" y="71" font-family="Arial,sans-serif" font-size="13" font-weight="700" letter-spacing="1.5" fill="#95f5c4">MAILLON / DEV</text>
+<text x="57" y="152" font-family="Arial,sans-serif" font-size="53" font-weight="800" fill="#f0faf6">MEU PORTFÓLIO</text>
+<text x="58" y="194" font-family="Arial,sans-serif" font-size="18" letter-spacing="2.3" fill="#b2c8c7">DESENVOLVIMENTO WEB • BACK-END</text>
+<path d="M58 218H542" stroke="#80f3bb" stroke-width="2"/>
+<rect x="58" y="240" width="432" height="50" rx="10" fill="#80f3bb" fill-opacity=".10" stroke="#80f3bb" stroke-opacity=".32"/>
+<text x="80" y="272" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#aaf9ce">HTML  ·  CSS  ·  JAVASCRIPT  ·  APIs</text>
+<rect x="615" y="47" width="615" height="246" rx="17" fill="#0a1420" stroke="#304e52"/>
+<rect x="615" y="47" width="615" height="56" rx="17" fill="#13262a"/><rect x="615" y="82" width="615" height="21" fill="#13262a"/>
+<circle cx="645" cy="75" r="7" fill="#f87171"/><circle cx="669" cy="75" r="7" fill="#fbbf24"/><circle cx="693" cy="75" r="7" fill="#34d399"/>
+<text x="746" y="80" font-size="15" fill="#9ac9b6" font-family="Consolas, monospace">index.html • apresentação</text>
+<text x="653" y="142" font-family="Consolas,monospace" font-size="16" fill="#81e4ac">&lt;h2&gt;Desenvolvedor back-end</text>
+<text x="654" y="174" font-family="Consolas,monospace" font-size="16" fill="#81e4ac">em formação&lt;/h2&gt;</text>
+<text x="653" y="230" font-family="Consolas,monospace" font-size="16" fill="#acc2c7">Projetos • Tecnologias • Formação</text>
+</svg>
