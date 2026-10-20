@@ -296,7 +296,34 @@ button,input,textarea{font:inherit}
   .code-window{width:100%}
   .future-icon{width:52px;height:52px}
 }
+
+/* REVELAÇÃO SUAVE AO ROLAR — ativada apenas depois da preparação via JS. */
+.scroll-reveal-enabled .reveal-target{
+  opacity:0;
+  transform:translate3d(0,22px,0);
+  transition:
+    opacity .65s ease var(--reveal-delay,0ms),
+    transform .65s cubic-bezier(.22,.68,0,1) var(--reveal-delay,0ms),
+    border-color .25s ease,
+    box-shadow .25s ease,
+    background-color .25s ease;
+}
+.scroll-reveal-enabled .reveal-target.is-visible{
+  opacity:1;
+  transform:translate3d(0,0,0);
+}
+/* Mantém os efeitos originais dos cartões e tecnologias. */
+.scroll-reveal-enabled .project-card.reveal-target.is-visible:hover{
+  transform:translateY(-6px);
+  transition-delay:0ms;
+}
+.scroll-reveal-enabled .tech-item.reveal-target.is-visible:hover{
+  transform:translateY(-4px);
+  transition-delay:0ms;
+}
+
 @media (prefers-reduced-motion:reduce){
+ .scroll-reveal-enabled .reveal-target{opacity:1!important;transform:none!important;transition:none!important}
  html{scroll-behavior:auto}
  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
