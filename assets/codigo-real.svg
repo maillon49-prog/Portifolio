@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="276" viewBox="0 0 1280 276" role="img" aria-label="Trecho real do HTML do portfólio">
+<rect width="1280" height="276" rx="18" fill="#09151d"/><rect width="1280" height="80" rx="18" fill="#16282e"/><rect y="60" width="1280" height="20" fill="#16282e"/>
+<circle cx="30" cy="30" r="7" fill="#f87171"/><circle cx="52" cy="30" r="7" fill="#fbbf24"/><circle cx="74" cy="30" r="7" fill="#34d399"/>
+<text x="109" y="36" font-family="Arial,sans-serif" font-size="18" font-weight="bold" fill="#80f3bb">PORTFÓLIO • HTML ORIGINAL</text>
+<text x="31" y="70" font-family="Consolas,monospace" font-size="14" fill="#a7c1c0">index.html • linhas 34–37 • código copiado sem alterações</text>
+<path d="M95 94V247" stroke="#80f3bb" stroke-opacity=".25" stroke-width="2"/>
+<text x="76" y="117" text-anchor="end" font-family="Consolas,monospace" font-size="16" fill="#748e8e">34</text><text x="117" y="117" xml:space="preserve" font-family="Consolas,monospace" font-size="18" fill="#80f3bb">            &lt;div class=&quot;minhasInformacoes&quot;&gt;</text>
+<text x="76" y="150" text-anchor="end" font-family="Consolas,monospace" font-size="16" fill="#748e8e">35</text><text x="117" y="150" xml:space="preserve" font-family="Consolas,monospace" font-size="18" fill="#d5f2e3">                &lt;p&gt;Olá, meu nome é&lt;/p&gt;</text>
+<text x="76" y="183" text-anchor="end" font-family="Consolas,monospace" font-size="16" fill="#748e8e">36</text><text x="117" y="183" xml:space="preserve" font-family="Consolas,monospace" font-size="18" fill="#d5f2e3">                &lt;h1&gt;Maillon &lt;span&gt;Andrade de Oliveira&lt;/span&gt;&lt;/h1&gt;</text>
+<text x="76" y="216" text-anchor="end" font-family="Consolas,monospace" font-size="16" fill="#748e8e">37</text><text x="117" y="216" xml:space="preserve" font-family="Consolas,monospace" font-size="18" fill="#d5f2e3">                &lt;h2&gt;Desenvolvedor back-end em formação&lt;/h2&gt;</text>
+</svg>
