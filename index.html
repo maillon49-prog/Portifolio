@@ -1,180 +1,182 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Isometra&family=Metal+Mania&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a080d">
+  <meta name="description" content="Portfólio de Maillon Andrade de Oliveira, desenvolvedor back-end em formação. Conheça projetos em JavaScript, Node.js, APIs REST e Java.">
+  <title>Maillon Andrade | Desenvolvedor Back-end</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="ambient ambient-red" aria-hidden="true"></div>
+  <div class="ambient ambient-purple" aria-hidden="true"></div>
 
-    <div class="nav">
-        <span>Maillon Andrade</span>
-    <nav>
-        <a href="#inicio">inicio</a>
-
-        <a href="#sobreMin">Sobre Mim</a>
-
+  <header class="site-header">
+    <div class="nav-shell">
+      <a href="#inicio" class="brand" aria-label="Maillon Andrade, início">
+        <span class="brand-mark">M<span>A</span></span>
+        <span class="brand-name">Maillon Andrade</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobreMin">Sobre mim</a>
         <a href="#aprendendo">Aprendendo</a>
-
         <a href="#projetos">Projetos</a>
-    </nav>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/5511964771710" target="_blank" rel="noopener noreferrer">
+        <span aria-hidden="true">↗</span> Vamos conversar
+      </a>
+      <details class="mobile-nav">
+        <summary aria-label="Abrir navegação">☰ <span>Menu</span></summary>
+        <nav aria-label="Navegação para dispositivos móveis">
+          <a href="#inicio">Início</a>
+          <a href="#sobreMin">Sobre mim</a>
+          <a href="#aprendendo">Aprendendo</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero shell" id="inicio" aria-labelledby="hero-titulo">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> DISCIPLINA · EVOLUÇÃO · CÓDIGO</div>
+        <p class="hero-overline">Olá, eu sou</p>
+        <h1 id="hero-titulo">Maillon Andrade <span>de Oliveira<span class="hero-period">.</span></span></h1>
+        <h2>Desenvolvedor <strong>back-end</strong> em formação</h2>
+        <p class="hero-text">Transformando estudos em projetos reais. Meu foco é aprender cada vez mais sobre lógica, APIs e desenvolvimento de sistemas para construir soluções que fazem sentido.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projetos"><span aria-hidden="true">⌘</span> Ver projetos <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-outline" href="https://github.com/maillon49-prog" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-outline" href="https://www.linkedin.com/in/maillon-andrade-571905389/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-highlights" aria-label="Foco profissional">
+          <span><i></i> Projetos práticos</span>
+          <span><i></i> Node.js e APIs</span>
+          <span><i></i> Aprendizado contínuo</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-orbit visual-orbit-one" aria-hidden="true"></div>
+        <div class="visual-orbit visual-orbit-two" aria-hidden="true"></div>
+        <div class="portrait-wrap">
+          <img src="img/foto de Perfil.jpg" alt="Foto de perfil de Maillon Andrade" class="portrait" fetchpriority="high">
+          <span class="portrait-label">MA / DEVELOPER</span>
+        </div>
+        <div class="code-window" aria-label="Trecho real da API JoKenPo">
+          <div class="code-title"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>backend/api.js</span><span>JavaScript</span></div>
+          <div class="code-content"><span class="line-num">09</span><code><em>const</em> joken = [<b>"pedra"</b>, <b>"papel"</b>, <b>"tesoura"</b>];</code></div>
+          <div class="code-content"><span class="line-num">10</span><code><em>let</em> escolhaJogador = <strong>null</strong>;</code></div>
+          <div class="code-content"><span class="line-num">11</span><code><em>let</em> escolhaCPU = <strong>null</strong>;</code></div>
+          <div class="code-caption"><span class="status-dot"></span> Código de um projeto real</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="shell section-grid" id="sobreMin">
+      <section class="panel about" aria-labelledby="about-title">
+        <div class="section-heading"><div><span class="section-overline">01 / QUEM SOU</span><h2 id="about-title"><span class="heading-bar"></span>Sobre mim</h2></div></div>
+        <p>Sou um desenvolvedor em formação, apaixonado por tecnologia e por resolver problemas com código. Meu foco principal é o <strong>back-end</strong>, especialmente a construção de APIs e a lógica por trás dos sistemas.</p>
+        <p>Enquanto curso Análise e Desenvolvimento de Sistemas, sigo estudando e criando aplicações que me ajudam a colocar cada conceito em prática.</p>
+        <div class="quote"><span aria-hidden="true">“</span>Um projeto de cada vez. Evoluindo um pouco todos os dias.</div>
+      </section>
+
+      <section class="panel tech" aria-labelledby="tech-title">
+        <div class="section-heading"><div><span class="section-overline">02 / FERRAMENTAS</span><h2 id="tech-title"><span class="heading-bar"></span>Tecnologias</h2></div></div>
+        <div class="tech-grid">
+          <div class="tech-item"><img src="img/icons8-html-5-48.png" alt="" loading="lazy"><span>HTML</span><small>Estrutura</small></div>
+          <div class="tech-item"><img src="img/icons8-css-48.png" alt="" loading="lazy"><span>CSS</span><small>Estilização</small></div>
+          <div class="tech-item"><img src="img/icons8-javascript-48.png" alt="" loading="lazy"><span>JavaScript</span><small>Lógica e DOM</small></div>
+          <div class="tech-item"><img src="img/icons8-nodejs-48.png" alt="" loading="lazy"><span>Node.js</span><small>Back-end</small></div>
+          <div class="tech-item"><img src="img/icons8-rest-api-40.png" alt="" loading="lazy"><span>API REST</span><small>Integração</small></div>
+          <div class="tech-item"><img src="img/icons8-git-48.png" alt="" loading="lazy"><span>Git</span><small>Versionamento</small></div>
+          <div class="tech-item"><img src="img/icons8-mysql-48.png" alt="" loading="lazy"><span>MySQL</span><small>Em estudo</small></div>
+          <div class="tech-item"><img src="img/icons8-java-48.png" alt="" loading="lazy"><span>Java</span><small>Em estudo</small></div>
+        </div>
+      </section>
+
+      <section class="panel education" aria-labelledby="edu-title">
+        <div class="section-heading"><div><span class="section-overline">03 / MINHA JORNADA</span><h2 id="edu-title"><span class="heading-bar"></span>Formação e cursos</h2></div></div>
+        <div class="timeline">
+          <div class="timeline-item"><span class="timeline-icon">✦</span><div><h3>Análise e Desenvolvimento de Sistemas</h3><p>UNINTER · Ensino superior EAD</p></div><span class="tag tag-progress">Em andamento</span></div>
+          <div class="timeline-item"><span class="timeline-icon">✓</span><div><h3>Gestão da Tecnologia da Informação</h3><p>Formação concluída</p></div><span class="tag tag-complete">Concluído</span></div>
+          <div class="timeline-item"><span class="timeline-icon">⌘</span><div><h3>Programação e Desenvolvimento de Software</h3><p>Curso · 600 horas</p></div><span class="tag tag-complete">Concluído</span></div>
+          <div class="timeline-item"><span class="timeline-icon">◈</span><div><h3>Informática Básica</h3><p>Curso complementar</p></div><span class="tag tag-complete">Concluído</span></div>
+        </div>
+      </section>
+
+      <section class="panel learning" id="aprendendo" aria-labelledby="learn-title">
+        <div class="section-heading"><div><span class="section-overline">04 / EVOLUÇÃO CONTÍNUA</span><h2 id="learn-title"><span class="heading-bar"></span>Aprendendo</h2></div></div>
+        <div class="learning-list">
+          <div class="learning-item"><span>☕</span><div><strong>Java</strong><small>Aprofundando lógica e orientação a objetos.</small></div></div>
+          <div class="learning-item"><span>▣</span><div><strong>Banco de dados</strong><small>Modelagem, SQL e persistência de informações.</small></div></div>
+          <div class="learning-item"><span>⚙</span><div><strong>Boas práticas de back-end</strong><small>Organização, validações e código mais limpo.</small></div></div>
+          <div class="learning-item"><span>⎇</span><div><strong>Arquitetura de APIs</strong><small>Rotas, responsabilidades e integração entre serviços.</small></div></div>
+          <div class="learning-item"><span>◇</span><div><strong>Autenticação</strong><small>Segurança e controle de acesso em sistemas.</small></div></div>
+        </div>
+      </section>
     </div>
 
-    <main>
-        <section class="cabesalho" id="inicio">
-            <div class="minhaImagem">
-                <img src="img/foto de Perfil.jpg" alt="Minha foto">
-            </div>
-            <div class="minhasInformacoes">
-                <p>Olá, meu nome é</p>
-                <h1>Maillon <span>Andrade de Oliveira</span></h1>
-                <h2>Desenvolvedor back-end em formação</h2>
+    <section class="shell projects" id="projetos" aria-labelledby="projects-title">
+      <div class="section-heading projects-heading">
+        <div><span class="section-overline">05 / PROJETOS REAIS</span><h2 id="projects-title"><span class="heading-bar"></span>Projetos em destaque</h2><p>Alguns projetos que desenvolvi para colocar em prática o que venho aprendendo.</p></div>
+        <a class="all-projects" href="https://github.com/maillon49-prog?tab=repositories" target="_blank" rel="noopener noreferrer">Ver todos no GitHub ↗</a>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card">
+          <a class="project-image" href="https://maillon49-prog.github.io/Jogo-de-JoKemPo-com-API/" target="_blank" rel="noopener noreferrer" aria-label="Abrir jogo JoKenPo"><img src="assets/project-jokenpo.svg" alt="Ilustração do projeto JoKenPo" loading="lazy"><span class="image-arrow" aria-hidden="true">↗</span></a>
+          <div class="project-body"><div class="project-top"><h3>JoKenPo com API</h3><span class="tag tag-progress">Em evolução</span></div><p>Pedra, papel e tesoura contra a CPU, com resultado processado por uma API Node.js.</p><div class="project-tags"><span>JavaScript</span><span>Express</span><span>API REST</span></div><div class="project-details"><strong>Futuras atualizações:</strong> Multijogador</div><a class="project-link" href="https://maillon49-prog.github.io/Jogo-de-JoKemPo-com-API/" target="_blank" rel="noopener noreferrer">Jogar agora <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="project-card">
+          <a class="project-image" href="https://maillon49-prog.github.io/calculadora-Com-API/" target="_blank" rel="noopener noreferrer" aria-label="Abrir calculadora"><img src="assets/project-calculadora.svg" alt="Ilustração do projeto Calculadora Full-Stack" loading="lazy"><span class="image-arrow" aria-hidden="true">↗</span></a>
+          <div class="project-body"><div class="project-top"><h3>Calculadora Full-Stack</h3><span class="tag tag-complete">Concluído</span></div><p>Interface web integrada a uma API Express para realizar operações matemáticas.</p><div class="project-tags"><span>JavaScript</span><span>Node.js</span><span>Express</span></div><div class="project-details"><strong>Destaques:</strong> Histórico de cálculos no navegador</div><a class="project-link" href="https://maillon49-prog.github.io/calculadora-Com-API/" target="_blank" rel="noopener noreferrer">Testar projeto <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="project-card">
+          <a class="project-image" href="https://github.com/maillon49-prog/BancoJava" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositório Banco Java"><img src="assets/project-banco-java.svg" alt="Ilustração do projeto Banco Java" loading="lazy"><span class="image-arrow" aria-hidden="true">↗</span></a>
+          <div class="project-body"><div class="project-top"><h3>Banco Java</h3><span class="tag tag-complete">Concluído</span></div><p>Sistema bancário de terminal com login, depósitos, saques e transferências Pix fictícias.</p><div class="project-tags"><span>Java</span><span>Maven</span><span>JLine</span></div><div class="project-details"><strong>Destaques:</strong> Menu interativo com teclado</div><a class="project-link" href="https://github.com/maillon49-prog/BancoJava" target="_blank" rel="noopener noreferrer">Ver código <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="project-card">
+          <a class="project-image" href="https://maillon49-prog.github.io/Sistema-veterin-rio/" target="_blank" rel="noopener noreferrer" aria-label="Abrir sistema veterinário"><img src="assets/project-veterinario.svg" alt="Ilustração do Sistema Veterinário" loading="lazy"><span class="image-arrow" aria-hidden="true">↗</span></a>
+          <div class="project-body"><div class="project-top"><h3>Sistema Veterinário</h3><span class="tag tag-progress">Em desenvolvimento</span></div><p>Sistema web com cadastro, consulta, edição e exclusão de pets usando JavaScript.</p><div class="project-tags"><span>HTML/CSS</span><span>JavaScript</span><span>LocalStorage</span></div><div class="project-details"><strong>Destaques:</strong> Login e gerenciamento de pets</div><a class="project-link" href="https://maillon49-prog.github.io/Sistema-veterin-rio/" target="_blank" rel="noopener noreferrer">Abrir sistema <span aria-hidden="true">↗</span></a></div>
+        </article>
+      </div>
+    </section>
 
-                <p>Focado em back-end e construindo projetos práticos para evoluir como desenvolvedor.</p>
+    <section class="shell future" aria-labelledby="future-title">
+      <div class="section-heading"><div><span class="section-overline">06 / PRÓXIMOS PASSOS</span><h2 id="future-title"><span class="heading-bar"></span>Futuras atualizações</h2><p>Novas funcionalidades e melhorias que quero desenvolver.</p></div></div>
+      <div class="future-grid">
+        <div class="future-feature"><div class="future-icon" aria-hidden="true">⌘</div><div><span class="future-label">JO KEN PO / PRÓXIMA EVOLUÇÃO</span><h3>Multijogador</h3><p>Meu objetivo é evoluir o JoKenPo para permitir partidas entre pessoas, além do modo contra a CPU.</p></div><span class="tag tag-progress">Planejado</span></div>
+        <div class="future-items">
+          <div><span>01</span>Novas funcionalidades nos projetos</div>
+          <div><span>02</span>Mais integrações e APIs</div>
+          <div><span>03</span>Melhorias contínuas de código</div>
+          <div><span>04</span>Aprendizado e novos desafios</div>
+        </div>
+      </div>
+    </section>
 
-                <div class="botoesContato">
-                    <a href="https://wa.me/5511964771710"><img src="img/zapp icone.png" alt="Ícone do WhatsApp">Contato</a>
+    <section class="shell contact" id="contato" aria-labelledby="contact-title">
+      <div><span class="section-overline">07 / CONTATO</span><h2 id="contact-title">Vamos construir algo <span>interessante?</span></h2><p>Estou sempre aberto a aprender, conversar sobre tecnologia e conhecer novas oportunidades.</p></div>
+      <a class="btn btn-primary" href="https://wa.me/5511964771710" target="_blank" rel="noopener noreferrer">Entrar em contato <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
 
-                    <a href="https://github.com/maillon49-prog"><img src="img/icons8-github-logo-94.png" alt="Ícone github logo">GitHub</a>
-
-                    <a href="https://www.linkedin.com/in/maillon-andrade-571905389/"><img src="img/icons8-linkedin-48.png" alt="Ícone linkedin logo">Linkedin</a>
-                </div>
-            </div>
-        </section>
-        <section class="sobreMin" id="sobreMin">
-            <div>
-                <h2>Sobre mim</h2>
-                <p class="textoSobreMin">
-                    Sou um desenvolvedor em formação,
-                    apaixonado por tecnologia e focado
-                    em back-end. Estou sempre buscando
-                    aprender mais, praticar e construir
-                    projetos reais para evoluir na área
-                    de desenvolvimento web.
-                </p>
-            </div>
-            <div>
-                <h2>Tecnologias</h2>
-                <ul class="icone">
-                    
-                    <li>
-                        <img src="img/icons8-html-5-48.png">
-                        HTML
-                    </li>
-                    <li>
-                        <img src="img/icons8-javascript-48.png">
-                        JavaScript
-                    </li>
-                    <li>
-                        <img src="img/icons8-mysql-48.png">
-                        MySQL
-                    </li>
-                    <li>
-                        <img src="img/icons8-css-48.png">
-                        CSS
-                    </li>
-                    <li>
-                        <img src="img/icons8-rest-api-40.png">
-                        API REST
-                    </li>
-                    <li>
-                        <img src="img/icons8-nodejs-48.png">
-                        Node.js
-                    </li>
-                    <li>
-                        <img src="img/icons8-git-48.png">
-                        Git
-                    </li>
-                </ul>
-            </div>
-            
-            <div>
-                <h2>Formação e cursos</h2>
-                <div class="cursos">
-                        <h3>Formação</h3>
-                <ul>
-                        <li>Análise e Desenvolvimento de Sistemas — em andamento</li>
-                        <li>Gestão da Tecnologia da Informação — concluído</li>
-                </ul>
-
-                <h3>Cursos</h3>
-                <ul>
-                        <li>Programação e Desenvolvimento de Software — 600 h</li>
-                        <li>Informática Básica — concluído</li>
-                </ul>
-                </div>
-            </div>
-
-            <div class="aprendendo" id="aprendendo">
-                <h3>Aprendendo</h3>
-                <div>
-                <p><img src="img/icons8-java-48.png"> Java</p>
-
-                <p><img src="img/icons8-database-50.png"> Banco de dados</p>
-
-                <p><img src="img/icons8-configuration-48.png"> Boas práticas de back-end</p>
-
-                <p><img src="img/icons8-database-64.png"> Arquitetura de APIs</p>
-
-                <p><img src="img/icons8-password-40.png"> Autenticação</p>
-                </div>
-            </div>
-
-        </section>
-        <section id="projetos">
-            <div class="prjetos-basico">
-                <h3>Projetos básicos</h3>
-                <div>
-                    <a href="https://maillon49-prog.github.io/calculadora-Com-API/">
-                        <p>Calculadora básica full-stack</p>
-                        <span>Completo</span>
-                        <small class="projeto-descricao">Calculadora web com JavaScript e API Node.js para realizar operações matemáticas.</small>
-                        <small class="projeto-atualizacoes"><strong>Destaques:</strong> Histórico de cálculos salvo no navegador</small>
-                    </a>
-                    <a href="https://github.com/maillon49-prog/BancoJava">
-                        <p>Banco Java (Terminal)</p>
-                        <span>Completo</span>
-                        <small class="projeto-descricao">Sistema bancário em Java com login, consulta de saldo, depósitos, saques e Pix.</small>
-                        <small class="projeto-atualizacoes"><strong>Destaques:</strong> Menu interativo no terminal</small>
-                    </a>
-                    <a href="https://maillon49-prog.github.io/Jogo-de-JoKemPo-com-API/" class="projeto-jokempo">
-                        <p>JoKenPo com API</p>
-                        <span>Em evolução</span>
-                        <small class="projeto-descricao">Jogo de Pedra, Papel e Tesoura desenvolvido com JavaScript e API Node.js.</small>
-                        <small class="projeto-atualizacoes"><strong>Futuras atualizações:</strong> Multijogador</small>
-                    </a>
-                    
-                    
-
-                </div>
-                <h3>Projetos completos</h3>
-                <div>
-                    <a href="https://maillon49-prog.github.io/Sistema-veterin-rio/">
-                        <p>Sistema Veterinário</p>
-                        <span>Incompleto</span>
-                        <small class="projeto-descricao">Sistema web em JavaScript para cadastrar, consultar, editar e excluir pets.</small>
-                        <small class="projeto-atualizacoes"><strong>Destaques:</strong> Login e dados salvos no navegador</small>
-                    </a>
-                    
-
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>
-            Ícones por
-            <a href="https://icons8.com" target="_blank">Icons8</a>
-        </p>
-    </footer>
-    
+  <footer class="site-footer">
+    <div class="shell footer-content">
+      <a href="#inicio" class="footer-brand">M<span>A</span> <small>Maillon Andrade</small></a>
+      <p>Desenvolvedor back-end em formação · Um projeto de cada vez.</p>
+      <div><a href="https://github.com/maillon49-prog" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/maillon-andrade-571905389/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://wa.me/5511964771710" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+    </div>
+    <p class="credits">Ícones por <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icons8</a>.</p>
+  </footer>
 </body>
 </html>
