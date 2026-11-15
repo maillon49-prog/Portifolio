@@ -1,75 +1,50 @@
-<p align="center"><img src="assets/readme-cover.svg" width="100%" alt="Portfólio — Maillon Andrade"></p>
-
 # Portfólio — Maillon Andrade
 
-Portfólio pessoal de desenvolvimento de software, com foco em **back-end, APIs REST e aprendizado na prática**.
+Portfólio pessoal de **Maillon Andrade**, estudante de Análise e Desenvolvimento de Sistemas e desenvolvedor back-end em formação.
 
-**[Ver site publicado](https://maillon49-prog.github.io/Portifolio/)** · **[GitHub](https://github.com/maillon49-prog)** · **[LinkedIn](https://www.linkedin.com/in/maillon-andrade-571905389/)**
+**[Acessar site](https://maillon49-prog.github.io/Portifolio/)** · [GitHub](https://github.com/maillon49-prog) · [LinkedIn](https://www.linkedin.com/in/maillon-andrade-571905389/)
 
-## Sobre
+## Objetivo
 
-Sou estudante de Análise e Desenvolvimento de Sistemas na UNINTER e estou construindo minha carreira em desenvolvimento back-end. O portfólio reúne projetos que fiz para estudar JavaScript, Node.js, Express, Java, lógica e integração de serviços.
-
-A nova versão do site apresenta uma identidade visual **dark**, com detalhes em vermelho e roxo, organização responsiva e foco na clareza das informações para visitantes e recrutadores.
+Apresentar meus estudos e projetos de desenvolvimento de sistemas, APIs e lógica de programação, com foco em oportunidades de estágio em desenvolvimento back-end.
 
 ## Tecnologias do site
 
-- **HTML5:** conteúdo semântico, navegação e apresentação dos projetos.
-- **CSS3:** layout, responsividade, animações e componentes visuais.
-- **JavaScript:** menu para celular, animações leves de entrada, indicação de seção e progresso de rolagem.
-- Sem framework de interface, build obrigatório ou banco de dados no próprio site.
+- HTML semântico, CSS responsivo e JavaScript puro
+- Tipografia DM Sans e Space Grotesk
+- Navegação para celular, indicador de rolagem e destaque da seção ativa
+- Animações de entrada com IntersectionObserver e suporte a `prefers-reduced-motion`
+- Publicação via GitHub Pages
 
-Outras ferramentas mostradas no portfólio representam minhas práticas e estudos nos projetos, e não dependências desta página.
+## Identidade visual
+
+Interface escura com detalhes em vermelho e roxo, cartões de projetos, retrato e prévia ilustrativa de uma resposta JSON. Os exemplos visuais são ilustrativos; os links dos cartões levam aos repositórios e, quando disponível, às demonstrações.
 
 ## Projetos em destaque
 
-| Projeto | O que mostra | Código |
-| --- | --- | --- |
-| JoKenPo com API | Comunicação de uma interface web com API Express | [Repositório](https://github.com/maillon49-prog/Jogo-de-JoKemPo-com-API) |
-| Calculadora Full-Stack | Operações processadas no servidor, validação e histórico local | [Repositório](https://github.com/maillon49-prog/calculadora-Com-API) |
-| Banco Java | Lógica de sistema bancário fictício em terminal | [Repositório](https://github.com/maillon49-prog/BancoJava) |
-| Sistema Veterinário | Protótipo de cadastro e gerenciamento de pets com dados locais | [Repositório](https://github.com/maillon49-prog/Sistema-veterin-rio) |
-
-**Observação:** projetos em evolução podem ter limitações. Demonstrações que usam APIs hospedadas em serviços externos dependem de esses servidores estarem disponíveis.
-
-## Estrutura
-
-~~~text
-Portifolio/
-├── assets/       # Artes e ilustrações dos projetos
-├── img/          # Foto de perfil e ícones de tecnologias
-├── index.html    # Conteúdo e links do portfólio
-├── style.css     # Identidade visual e responsividade
-├── script.js     # Navegação e interações acessíveis
-└── README.md     # Documentação
-~~~
+| Projeto | O que demonstra |
+| --- | --- |
+| [JoKenPo com API](https://github.com/maillon49-prog/Jogo-de-JoKemPo-com-API) | API Express, requisições HTTP e validação |
+| [Calculadora Full-Stack](https://github.com/maillon49-prog/calculadora-Com-API) | Processamento no servidor, tratamento de entradas e histórico local |
+| [Banco Java](https://github.com/maillon49-prog/BancoJava) | Regras de negócio e operações simuladas em Java |
+| [Sistema Veterinário](https://github.com/maillon49-prog/Sistema-veterin-rio) | Interface de cadastro e armazenamento local |
 
 ## Executar localmente
 
-Este portfólio é um site estático. Não é necessário iniciar um servidor de API para abrir esta página.
+Clone o repositório e abra o arquivo `index.html` no navegador. O portfólio não exige build nem instalação de dependências.
 
-~~~bash
-git clone https://github.com/maillon49-prog/Portifolio.git
-cd Portifolio
-~~~
+## Estrutura
 
-Abra o arquivo **index.html** no navegador ou utilize o Live Server do VS Code.
+- `index.html`: conteúdo e estrutura
+- `style.css`: estilos, layout e responsividade
+- `script.js`: menu, navegação e animações
+- `assets/`: ilustrações SVG
+- `img/`: fotografia e ícones
 
-## Acessibilidade e desempenho
+## Observações
 
-- Links de pular para o conteúdo e estados de foco visíveis.
-- Menu mobile com botão e atributo aria-expanded.
-- Respeito à preferência por movimento reduzido.
-- Imagens dos projetos carregadas sob demanda.
-- Conteúdo permanece disponível mesmo sem JavaScript.
-
-## Próximos passos
-
-- Substituir ou complementar ilustrações de projeto por capturas reais das interfaces.
-- Enriquecer os READMEs dos projetos com instruções de execução, exemplos e testes.
-- Evoluir um sistema back-end com banco de dados e autenticação.
-- Verificar regularmente os links das demonstrações.
+Algumas demonstrações de projetos dependem de APIs hospedadas externamente e podem demorar a responder. As imagens dos cartões são ilustrações, não capturas de tela dos aplicativos.
 
 ---
 
-Desenvolvido como parte da minha jornada de aprendizado. **[Acessar portfólio](https://maillon49-prog.github.io/Portifolio/)**.
+Desenvolvido por Maillon Andrade como parte dos estudos em programação.
