@@ -375,3 +375,80 @@ body{background-color:#090a10;background-image:radial-gradient(ellipse 58% 30% a
 .contact-section{overflow:hidden;box-shadow:0 24px 90px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.05)}
 @media(max-width:620px){.hero h1{letter-spacing:-.055em}.hero-actions .btn-quiet{flex:1 1 auto}.project-proof{font-size:12px}.project-card:hover{transform:none}}
 @media(prefers-reduced-motion:reduce){.btn,.technology,.project-card,.project-media img{transition:none!important}.btn:hover,.technology:hover,.project-card:hover,.project-card:hover .project-media img{transform:none!important}}
+
+
+/* RESPONSIVIDADE AUDITADA — foto e codigo em fluxo, sem sobreposicao no mobile.
+   A composicao sobreposta do desktop foi preservada. */
+html { overflow-x: clip; }
+@media (max-width: 980px) {
+  .hero-art {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 18px;
+    width: min(100%, 600px);
+    min-height: 0;
+    height: auto;
+    padding: 24px 0 5px;
+    isolation: isolate;
+  }
+  .hero-orbit, .portrait-halo { display: none; }
+  .portrait-frame, .portrait-frame:hover {
+    position: relative;
+    order: 1;
+    flex: none;
+    transform: none;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    margin: 0;
+    width: min(280px, 65vw);
+    aspect-ratio: 300 / 360;
+  }
+  .portrait { display: block; width: 100%; height: 100%; object-fit: cover; }
+  .floating-chip {
+    position: relative;
+    order: 3;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    align-self: center;
+  }
+  .code-preview {
+    position: relative;
+    order: 2;
+    flex: none;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    margin: 0;
+    width: min(100%, 440px);
+    max-width: 100%;
+  }
+}
+@media (max-width: 700px) {
+  .hero-art { max-width: 100%; padding-top: 18px; gap: 14px; }
+  .portrait-frame, .portrait-frame:hover {
+    width: min(244px, 68vw);
+    padding: 6px;
+    border-radius: 25px;
+  }
+  .portrait { border-radius: 19px; }
+  .floating-chip { display: none; }
+  .code-preview { width: min(100%, 420px); border-radius: 14px; }
+  .code-preview-body { padding: 10px 12px; }
+  .code-preview-body .line { font-size: clamp(9px, 2.7vw, 11px); gap: 9px; }
+  .hero-socials { gap: 12px; }
+  .hero-actions .btn { white-space: normal; text-align: center; }
+  .highlights .highlight { overflow-wrap: anywhere; }
+}
+@media (max-width: 390px) {
+  .hero-art { gap: 12px; }
+  .portrait-frame, .portrait-frame:hover { width: min(226px, 69vw); }
+  .code-preview { width: 100%; }
+}
