@@ -1,108 +1,75 @@
-<p align="center">
-  <img src="assets/readme-cover.svg" width="100%" alt="Portfólio de desenvolvimento — Maillon Andrade" />
-</p>
+<p align="center"><img src="assets/readme-cover.svg" width="100%" alt="Portfólio — Maillon Andrade"></p>
 
-<h1 align="center">Portfólio • Desenvolvimento Web</h1>
+# Portfólio — Maillon Andrade
 
-<p align="center">
-  Um espaço para reunir meus projetos, mostrar o que aprendi e acompanhar minha evolução em programação, com foco em desenvolvimento back-end.
-</p>
+Portfólio pessoal de desenvolvimento de software, com foco em **back-end, APIs REST e aprendizado na prática**.
 
-<p align="center">
-  <img alt="HTML5" src="https://img.shields.io/badge/HTML5-Estrutura-e34f26?style=for-the-badge&amp;logo=html5&amp;logoColor=white" height="28" />
-  <img alt="CSS3" src="https://img.shields.io/badge/CSS3-Design-1572b6?style=for-the-badge&amp;logo=css&amp;logoColor=white" height="28" />
-  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-Projetos-f7df1e?style=for-the-badge&amp;logo=javascript&amp;logoColor=black" height="28" />
-  <img alt="Responsive" src="https://img.shields.io/badge/Layout-Responsivo-20bfa5?style=for-the-badge" height="28" />
-  <img alt="Status" src="https://img.shields.io/badge/Status-Em%20evolucao-8bba74?style=for-the-badge" height="28" />
-</p>
+**[Ver site publicado](https://maillon49-prog.github.io/Portifolio/)** · **[GitHub](https://github.com/maillon49-prog)** · **[LinkedIn](https://www.linkedin.com/in/maillon-andrade-571905389/)**
 
-<p align="center">
-  <a href="https://github.com/maillon49-prog">Meu GitHub</a>
-  &nbsp;·&nbsp;
-  <a href="https://github.com/maillon49-prog/Portifolio">Código do portfólio</a>
-  &nbsp;·&nbsp;
-  <a href="https://www.linkedin.com/in/maillon-andrade-571905389/">LinkedIn</a>
-</p>
+## Sobre
 
----
+Sou estudante de Análise e Desenvolvimento de Sistemas na UNINTER e estou construindo minha carreira em desenvolvimento back-end. O portfólio reúne projetos que fiz para estudar JavaScript, Node.js, Express, Java, lógica e integração de serviços.
 
-## ✨ Sobre o projeto
+A nova versão do site apresenta uma identidade visual **dark**, com detalhes em vermelho e roxo, organização responsiva e foco na clareza das informações para visitantes e recrutadores.
 
-Este é meu **portfólio pessoal**, construído para apresentar minha trajetória como desenvolvedor em formação e centralizar meus projetos de estudo e aplicações publicadas.
+## Tecnologias do site
 
-O site utiliza um visual **dark tech**, com tons de verde-menta e ciano, cartões interativos e uma estrutura que se adapta a telas de computador e celular.
+- **HTML5:** conteúdo semântico, navegação e apresentação dos projetos.
+- **CSS3:** layout, responsividade, animações e componentes visuais.
+- **JavaScript:** menu para celular, animações leves de entrada, indicação de seção e progresso de rolagem.
+- Sem framework de interface, build obrigatório ou banco de dados no próprio site.
 
-### O que você encontra no site
+Outras ferramentas mostradas no portfólio representam minhas práticas e estudos nos projetos, e não dependências desta página.
 
-- 👨‍💻 **Apresentação profissional:** quem sou e qual área estou buscando desenvolver.
-- 🧰 **Tecnologias:** HTML, CSS, JavaScript, Node.js, Git, MySQL e APIs REST.
-- 📚 **Estudos e formação:** cursos e temas que estou aprendendo.
-- 🚀 **Projetos:** aplicações com links para demonstrações e repositórios.
-- 📬 **Contato:** formas de conhecer meu trabalho e entrar em contato.
+## Projetos em destaque
 
-## 🛠️ Tecnologias do portfólio
+| Projeto | O que mostra | Código |
+| --- | --- | --- |
+| JoKenPo com API | Comunicação de uma interface web com API Express | [Repositório](https://github.com/maillon49-prog/Jogo-de-JoKemPo-com-API) |
+| Calculadora Full-Stack | Operações processadas no servidor, validação e histórico local | [Repositório](https://github.com/maillon49-prog/calculadora-Com-API) |
+| Banco Java | Lógica de sistema bancário fictício em terminal | [Repositório](https://github.com/maillon49-prog/BancoJava) |
+| Sistema Veterinário | Protótipo de cadastro e gerenciamento de pets com dados locais | [Repositório](https://github.com/maillon49-prog/Sistema-veterin-rio) |
 
-| Tecnologia | Uso no site |
-| :-- | :-- |
-| **HTML5** | Estrutura semântica, seções e conteúdo |
-| **CSS3** | Design dark, layout responsivo, efeitos e animações |
-| **JavaScript** | Tecnologia utilizada nos projetos apresentados; a página atual do portfólio funciona com HTML e CSS |
+**Observação:** projetos em evolução podem ter limitações. Demonstrações que usam APIs hospedadas em serviços externos dependem de esses servidores estarem disponíveis.
 
-> As tecnologias listadas na seção **Tecnologias** do site também incluem ferramentas que utilizo ou estudo nos meus projetos, como Node.js, Git, MySQL e APIs REST.
+## Estrutura
 
-## 💻 Um trecho real do meu código
-
-Este é um trecho **literal do meu arquivo [`index.html`](https://github.com/maillon49-prog/Portifolio/blob/main/index.html)**, onde apresento meu perfil de desenvolvedor.
-
-<p align="center">
-  <img src="assets/codigo-real.svg" width="100%" alt="Trecho real do HTML do portfólio" />
-</p>
-
-## 🚀 Projetos que aparecem no portfólio
-
-| Projeto | Descrição | Acesso |
-| :-- | :-- | :-- |
-| **Calculadora Full-Stack** | Calculadora web integrada a uma API com Node.js e Express | [Abrir projeto](https://github.com/maillon49-prog/calculadora-Com-API) |
-| **Banco Java** | Sistema bancário no terminal com login, saldo, depósito, saque e Pix fictício | [Abrir projeto](https://github.com/maillon49-prog/BancoJava) |
-| **JoKenPo com API** | Pedra, papel e tesoura contra a CPU, com backend em Node.js | [Jogar](https://maillon49-prog.github.io/Jogo-de-JoKemPo-com-API/) |
-| **Sistema Veterinário** | Cadastro e gerenciamento de pets em uma aplicação web | [Abrir projeto](https://github.com/maillon49-prog/Sistema-veterin-rio) |
-
-## 📁 Estrutura do repositório
-
-```text
+~~~text
 Portifolio/
-├── assets/
-│   ├── readme-cover.svg   # Capa do README
-│   └── codigo-real.svg    # Imagem com código verdadeiro do HTML
-├── img/                   # Foto, ícones e recursos visuais
-├── index.html             # Estrutura do portfólio
-├── style.css              # Layout, cores e responsividade
-├── script.js              # Arquivo JavaScript atualmente vazio
-└── README.md              # Apresentação do repositório
-```
+├── assets/       # Artes e ilustrações dos projetos
+├── img/          # Foto de perfil e ícones de tecnologias
+├── index.html    # Conteúdo e links do portfólio
+├── style.css     # Identidade visual e responsividade
+├── script.js     # Navegação e interações acessíveis
+└── README.md     # Documentação
+~~~
 
-## ▶️ Como executar localmente
+## Executar localmente
 
-O site é **estático**, portanto não precisa de Node.js ou banco de dados para rodar.
+Este portfólio é um site estático. Não é necessário iniciar um servidor de API para abrir esta página.
 
-```bash
+~~~bash
 git clone https://github.com/maillon49-prog/Portifolio.git
 cd Portifolio
-```
+~~~
 
-Depois, abra o arquivo `index.html` no navegador ou use a extensão **Live Server** no VS Code.
+Abra o arquivo **index.html** no navegador ou utilize o Live Server do VS Code.
 
-## 🎯 Próximas melhorias
+## Acessibilidade e desempenho
 
-- [ ] Adicionar prévias visuais dos projetos.
-- [ ] Evoluir o design da seção de projetos, mantendo a identidade dark tech.
-- [ ] Aprimorar a apresentação das tecnologias e experiências.
-- [ ] Continuar incluindo os novos sistemas que eu desenvolver.
+- Links de pular para o conteúdo e estados de foco visíveis.
+- Menu mobile com botão e atributo aria-expanded.
+- Respeito à preferência por movimento reduzido.
+- Imagens dos projetos carregadas sob demanda.
+- Conteúdo permanece disponível mesmo sem JavaScript.
+
+## Próximos passos
+
+- Substituir ou complementar ilustrações de projeto por capturas reais das interfaces.
+- Enriquecer os READMEs dos projetos com instruções de execução, exemplos e testes.
+- Evoluir um sistema back-end com banco de dados e autenticação.
+- Verificar regularmente os links das demonstrações.
 
 ---
 
-<p align="center">
-  Desenvolvido por <strong>Maillon Andrade de Oliveira</strong><br />
-  <a href="https://github.com/maillon49-prog">GitHub</a> ·
-  <a href="https://www.linkedin.com/in/maillon-andrade-571905389/">LinkedIn</a>
-</p>
+Desenvolvido como parte da minha jornada de aprendizado. **[Acessar portfólio](https://maillon49-prog.github.io/Portifolio/)**.

@@ -1,59 +1,121 @@
-/* Animação de entrada ao rolar, com acessibilidade e sem bibliotecas. */
+/* Portfólio Maillon Andrade — navegação, acessibilidade e efeitos discretos */
 (() => {
-  'use strict';
+  "use strict";
 
-  // Conteúdo continua visível sem JS, sem suporte ao recurso ou
-  // quando o usuário prefere movimento reduzido.
-  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (!('IntersectionObserver' in window) || motionPreference.matches) return;
+  const toggle = document.getElementById("mobile-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const progress = document.getElementById("scroll-progress");
+  const year = document.getElementById("year");
+  if (year) year.textContent = String(new Date().getFullYear());
 
-  const groups = [
-    ['.section-grid > .panel', 0],
-    ['.tech-grid > .tech-item', 45],
-    ['.timeline > .timeline-item', 50],
-    ['.learning-list > .learning-item', 50],
-    ['.projects-heading', 0],
-    ['.projects-grid > .project-card', 80],
-    ['.future > .section-heading', 0],
-    ['.future-feature', 0],
-    ['.future-items > div', 55],
-    ['.contact', 0],
-    ['.site-footer', 0]
-  ];
+  function closeMenu() {
+    if (!toggle || !menu) return;
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Abrir menu");
+    menu.hidden = true;
+  }
 
-  const items = [];
-  for (const [selector, stagger] of groups) {
-    document.querySelectorAll(selector).forEach((element, index) => {
-      element.classList.add('reveal-target');
-      element.style.setProperty('--reveal-delay', `${Math.min(index * stagger, 240)}ms`);
-      items.push(element);
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const willOpen = toggle.getAttribute("aria-expanded") !== "true";
+      toggle.setAttribute("aria-expanded", String(willOpen));
+      toggle.setAttribute("aria-label", willOpen ? "Fechar menu" : "Abrir menu");
+      menu.hidden = !willOpen;
+    });
+
+    menu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeMenu();
+    });
+
+    document.addEventListener("click", event => {
+      if (!menu.hidden && !menu.contains(event.target) && !toggle.contains(event.target)) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 980) closeMenu();
+    }, { passive: true });
+  }
+
+  // Pequeno indicador de leitura — sem efeitos sobre o conteúdo.
+  if (progress) {
+    let scheduled = false;
+    const paintProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? Math.min(100, Math.max(0, window.scrollY / max * 100)) : 0;
+      progress.style.width = pct + "%";
+      scheduled = false;
+    };
+    window.addEventListener("scroll", () => {
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(paintProgress);
+    }, { passive: true });
+    window.addEventListener("resize", paintProgress, { passive: true });
+    paintProgress();
+  }
+
+  const navLinks = [...document.querySelectorAll(".nav-links .nav-link")];
+  const ids = ["inicio", "sobre", "tecnologias", "projetos", "jornada"];
+  if ("IntersectionObserver" in window && navLinks.length) {
+    const activeObserver = new IntersectionObserver((entries) => {
+      const active = entries.filter(entry => entry.isIntersecting);
+      if (!active.length) return;
+      active.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      const id = active[0].target.id;
+      navLinks.forEach(link => {
+        const selected = link.getAttribute("href") === "#" + id;
+        link.classList.toggle("active", selected);
+        if (selected) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    }, { rootMargin: "-20% 0px -56% 0px", threshold: [0, 0.1, 0.5] });
+
+    ids.forEach(id => {
+      const section = document.getElementById(id);
+      if (section) activeObserver.observe(section);
     });
   }
+
+  // Mostra tudo por padrão; só ativa a revelação quando há suporte e movimento permitido.
+  const media = window.matchMedia ? window.matchMedia("(prefers-reduced-motion: reduce)") : null;
+  if (!("IntersectionObserver" in window) || (media && media.matches)) return;
+
+  const selectors = [
+    ".section-intro", ".about-aside", ".section-header",
+    ".technology", ".project-card", ".journey-panel",
+    ".contact-content", ".contact-actions", ".highlight"
+  ];
+  const items = [];
+  selectors.forEach(selector => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      element.classList.add("reveal-item");
+      element.style.setProperty("--delay", Math.min(index * 55, 220) + "ms");
+      items.push(element);
+    });
+  });
   if (!items.length) return;
 
   const observer = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (!entry.isIntersecting) continue;
-      entry.target.classList.add('is-visible');
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
       observer.unobserve(entry.target);
-    }
-  }, {
-    threshold: 0,
-    rootMargin: '0px 0px -5% 0px'
-  });
+    });
+  }, { threshold: 0.04, rootMargin: "0px 0px -30px 0px" });
 
-  for (const item of items) observer.observe(item);
-  document.documentElement.classList.add('scroll-reveal-enabled');
+  items.forEach(item => observer.observe(item));
+  document.documentElement.classList.add("motion-ready");
 
-  // Respeita alterações da preferência durante a visita.
-  const showAll = (event) => {
+  const disableMotion = event => {
     if (!event.matches) return;
     observer.disconnect();
-    document.documentElement.classList.remove('scroll-reveal-enabled');
+    document.documentElement.classList.remove("motion-ready");
   };
-  if (motionPreference.addEventListener) {
-    motionPreference.addEventListener('change', showAll);
-  } else if (motionPreference.addListener) {
-    motionPreference.addListener(showAll);
-  }
+  if (media && media.addEventListener) media.addEventListener("change", disableMotion);
 })();
